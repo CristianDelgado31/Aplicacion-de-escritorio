@@ -1,0 +1,29 @@
+[
+  {
+    "EsCitrico": false,
+    "CascaraComestible": false,
+    "Codigo": "1",
+    "Nombre": "banana",
+    "Unidades": 32,
+    "ColorDelAlimento": 2,
+    "Empresa": "dsada"
+  },
+  {
+    "EsCitrico": true,
+    "CascaraComestible": false,
+    "Codigo": "3",
+    "Nombre": "Mandarinas",
+    "Unidades": 51,
+    "ColorDelAlimento": 0,
+    "Empresa": "MandarinasBR"
+  },
+  {
+    "EsCitrico": false,
+    "CascaraComestible": true,
+    "Codigo": "2",
+    "Nombre": "peras",
+    "Unidades": 11,
+    "ColorDelAlimento": 3,
+    "Empresa": "PerasBR"
+  }
+]

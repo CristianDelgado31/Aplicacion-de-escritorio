@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QWddlVtNAGxrMSvq7w18aY7RRMC0tAsMzDZk5Lnm3cNnXcoqkWfOYVS757oPMepWkejpcvsDumCz8FxVDn2etw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

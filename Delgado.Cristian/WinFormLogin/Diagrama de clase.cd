@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WinFormLogin.FormHistorialActividad">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAIAAAAAAAAAQAE=</HashCode>
+      <FileName>FormHistorialActividad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormLogin.FormMostrar">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAgAAKEAAAQAAACAAAACCQAAAAACABAAIAAAGAQ=</HashCode>
+      <FileName>FormMostrar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormLogin.FormOrdenar">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAACEAABBBACCAAAACAAgAABAAAAAgAAQAAAA=</HashCode>
+      <FileName>FormOrdenar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormLogin.Login">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAAEAAAACABAACAAAACQAAACACAABAAAA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormLogin.WinFormAgregar">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAgEQAkADiu5QJQMQAChKBAaACFIgmIEACAAEIAIAAA=</HashCode>
+      <FileName>WinFormAgregar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WinFormLogin.WinFormPrincipal">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgACSHCAAAAABCAAogCRABAAAYAAAAAAAAIUAA=</HashCode>
+      <FileName>WinFormPrincipal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
