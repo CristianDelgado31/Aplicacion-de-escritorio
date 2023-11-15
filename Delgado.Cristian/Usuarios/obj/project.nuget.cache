@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a5lLBtnN3c3ZjEJqFQ4SjXcIG2/Iqj2/SBQUWBPSEAcAuBEIoQU2P4v3sePdZnwbeWYKs/N4GCD7jOVkCHpoOA==",
+  "dgSpecHash": "yiDFPCejSnvIFHFlBIbkxJnNHIKVmgt5nFCYBmgaxjVGff25FpdT2lZXgrh0ff5i0CHYrDVNWeTL0NMNFy+rRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj",
+  "projectFilePath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\crist\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],

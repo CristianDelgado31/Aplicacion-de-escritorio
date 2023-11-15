@@ -1,4 +1,5 @@
 ﻿
+using BaseDeDatos;
 using LibreriaDeClases;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,17 @@ namespace WinFormLogin
     {
         private Login login;
         private UsuarioLogin usuario;
-        private ColeccionGenerica listaGenerica;
+        private ColeccionGenerica<Alimento> listaGenerica;
         private List<UsuarioLogin>? registroActividad;
         private DateTime dateTime;
         private DateOnly fecha;
+        private AccesoDatos conexionBD;
+
         public WinFormPrincipal()
         {
-            listaGenerica = new ColeccionGenerica();
+            listaGenerica = new ColeccionGenerica<Alimento>();
             registroActividad = new List<UsuarioLogin>();
+            conexionBD = new AccesoDatos();
             dateTime = DateTime.Now;
             fecha = new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
             InitializeComponent();
@@ -50,6 +54,7 @@ namespace WinFormLogin
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            listaGenerica.listaAlimentos = conexionBD.CrearListaGenerica(listaGenerica.listaAlimentos);
             WinFormAgregar winFormAgregar = new WinFormAgregar(this, listaGenerica);
             this.Hide();
             winFormAgregar.ShowDialog();
@@ -57,7 +62,8 @@ namespace WinFormLogin
 
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            FormMostrar formMostrar = new FormMostrar(this, listaGenerica);
+            listaGenerica.listaAlimentos = conexionBD.CrearListaGenerica(listaGenerica.listaAlimentos);
+            FormMostrar formMostrar = new FormMostrar(this, listaGenerica, conexionBD);
             this.Hide();
             formMostrar.ShowDialog();
         }
@@ -65,9 +71,9 @@ namespace WinFormLogin
         private void WinFormPrincipal_Load(object sender, EventArgs e)
         {
             string ubicacionArchivo = Directory.GetCurrentDirectory();
-            string rutaAlimentos = ubicacionArchivo + @"\alimentos.json";
-            if (File.Exists(rutaAlimentos))
-                listaGenerica.listaAlimentos = ColeccionGenerica.DeserializarListaAlimentos(rutaAlimentos);
+            //string rutaAlimentos = ubicacionArchivo + @"\alimentos.json";
+            //if (File.Exists(rutaAlimentos))
+            //    listaGenerica.listaAlimentos = ColeccionGenerica<Alimento>.DeserializarListaAlimentos(rutaAlimentos);
 
 
             string rutaRegistroUsuarios = ubicacionArchivo + @"\registroActividad.json";
@@ -85,7 +91,7 @@ namespace WinFormLogin
         }
         private void WinFormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ColeccionGenerica.SerializarListaAlimentos(listaGenerica.listaAlimentos);
+            //ColeccionGenerica<Alimento>.SerializarListaAlimentos(listaGenerica.listaAlimentos);
             UsuarioLogin.SerializarRegistroActividad(registroActividad);
         }
         private void btnHistorialDeActividad_Click(object sender, EventArgs e)

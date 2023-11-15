@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BaseDeDatos;
 
 namespace WinFormLogin
 {
@@ -16,14 +17,16 @@ namespace WinFormLogin
         private WinFormPrincipal winPrincipal;
         private Alimento alimentoAModificar;
         public Alimento alimentoNuevo;
-        private ColeccionGenerica listaGenerica;
+        private ColeccionGenerica<Alimento> listaGenerica;
         private bool modificar;
+        private AccesoDatos conexionBD;
 
         public WinFormAgregar()
         {
+            conexionBD = new AccesoDatos();
             InitializeComponent();
         }
-        public WinFormAgregar(WinFormPrincipal winFormPrincipal, ColeccionGenerica listaGenerica) : this()
+        public WinFormAgregar(WinFormPrincipal winFormPrincipal, ColeccionGenerica<Alimento> listaGenerica) : this()
         {
             this.winPrincipal = winFormPrincipal;
             this.listaGenerica = listaGenerica;
@@ -100,6 +103,13 @@ namespace WinFormLogin
                     bool agregar = listaGenerica + alimentoNuevo;
                     if (agregar == true)
                     {
+                        if (alimentoNuevo is Fruta fruta)
+                            conexionBD.AgregarAlimento(fruta, null, null);
+                        else if (alimentoNuevo is Verdura verdura)
+                            conexionBD.AgregarAlimento(null, verdura, null);
+                        else if (alimentoNuevo is Carne carne)
+                            conexionBD.AgregarAlimento(null, null, carne);
+
                         MessageBox.Show("Se agrego un nuevo alimento");
                     }
                 }
@@ -200,6 +210,8 @@ namespace WinFormLogin
                 btnConfirmar.Visible = true;
                 btnCancelar.Visible = true;
                 txtCodigo.Text = alimentoAModificar.MostrarCodigo();
+                txtEmpresa.Enabled = false;
+                txtEmpresa.Text = alimentoAModificar.Empresa;
             }
         }
     }

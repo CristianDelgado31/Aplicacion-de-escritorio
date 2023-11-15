@@ -1,12 +1,21 @@
 [
   {
     "EsCitrico": false,
-    "CascaraComestible": false,
-    "Codigo": "1",
-    "Nombre": "banana",
-    "Unidades": 32,
+    "CascaraComestible": true,
+    "Codigo": "2",
+    "Nombre": "peras",
+    "Unidades": 11,
+    "ColorDelAlimento": 3,
+    "Empresa": "PerasBR"
+  },
+  {
+    "SeCocina": true,
+    "EsUnaHoja": false,
+    "Codigo": "123AB",
+    "Nombre": "Papa",
+    "Unidades": 15,
     "ColorDelAlimento": 2,
-    "Empresa": "dsada"
+    "Empresa": "PapasBR"
   },
   {
     "EsCitrico": true,
@@ -19,11 +28,38 @@
   },
   {
     "EsCitrico": false,
-    "CascaraComestible": true,
-    "Codigo": "2",
-    "Nombre": "peras",
-    "Unidades": 11,
+    "CascaraComestible": false,
+    "Codigo": "1",
+    "Nombre": "banana",
+    "Unidades": 32,
+    "ColorDelAlimento": 2,
+    "Empresa": "dsada"
+  },
+  {
+    "EsCitrico": true,
+    "CascaraComestible": false,
+    "Codigo": "CD3131",
+    "Nombre": "Kiwi",
+    "Unidades": 14,
     "ColorDelAlimento": 3,
-    "Empresa": "PerasBR"
+    "Empresa": "KIWIARG"
+  },
+  {
+    "EsCitrico": true,
+    "CascaraComestible": false,
+    "Codigo": "CR7000",
+    "Nombre": "Naranja",
+    "Unidades": 31,
+    "ColorDelAlimento": 0,
+    "Empresa": "NaranjasBR"
+  },
+  {
+    "EsCitrico": false,
+    "CascaraComestible": true,
+    "Codigo": "CASJ321",
+    "Nombre": "Pera",
+    "Unidades": 41,
+    "ColorDelAlimento": 2,
+    "Empresa": "PeritasARG"
   }
 ]

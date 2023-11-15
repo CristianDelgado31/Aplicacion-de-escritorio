@@ -1,13 +1,18 @@
 using LibreriaDeClases;
 using Usuarios;
+using BaseDeDatos;
 
 namespace WinFormLogin
 {
     public partial class Login : Form
     {
         private List<UsuarioLogin>? usuarios;
+        private AccesoDatos conexionBD;
+        private bool conexion;
         public Login()
         {
+            conexionBD = new AccesoDatos();
+            conexion = false;
             usuarios = UsuarioLogin.DeserializarUsuarios("login");
             InitializeComponent();
         }
@@ -33,5 +38,13 @@ namespace WinFormLogin
             txtClave.Clear();
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (conexionBD.PruebaConexion() && conexion == false)
+            {
+                MessageBox.Show("Conexion exitosa a la base de datos!");
+                conexion = true;
+            }
+        }
     }
 }

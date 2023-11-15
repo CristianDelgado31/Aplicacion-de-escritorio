@@ -10,3 +10,15 @@ C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\Libr
 C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.pdb
 C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\ref\LibreriaDeClases.dll
 C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.csproj.AssemblyReference.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\bin\Debug\net6.0\LibreriaDeClases.deps.json
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\bin\Debug\net6.0\LibreriaDeClases.dll
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\bin\Debug\net6.0\LibreriaDeClases.pdb
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.csproj.AssemblyReference.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.AssemblyInfoInputs.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.AssemblyInfo.cs
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.csproj.CoreCompileInputs.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.dll
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\refint\LibreriaDeClases.dll
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\LibreriaDeClases.pdb
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\LibreriaDeClases\obj\Debug\net6.0\ref\LibreriaDeClases.dll

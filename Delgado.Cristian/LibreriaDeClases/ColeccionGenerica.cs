@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-
 namespace LibreriaDeClases
 {
-    public class ColeccionGenerica
+    public class ColeccionGenerica<T> : IColeccionGenerica<T>
+     where T : Alimento
     {
-        public List<Alimento> listaAlimentos;
+        public List<T> listaAlimentos;
         public ColeccionGenerica()
         {
-            listaAlimentos = new List<Alimento>();
+            listaAlimentos = new List<T>();
         }
-        public static bool operator +(ColeccionGenerica coleccion, Alimento alimentoIngresado)
+        public static bool operator +(ColeccionGenerica<T> coleccion, T alimentoIngresado)
         {
             bool resultado = true;
             if(coleccion.listaAlimentos.Contains(alimentoIngresado))
@@ -29,7 +29,7 @@ namespace LibreriaDeClases
 
             return resultado;
         }
-        public static bool operator -(ColeccionGenerica coleccion, Alimento alimentoIngresado)
+        public static bool operator -(ColeccionGenerica<T> coleccion, T alimentoIngresado)
         {
             bool resultado = false;
             if (coleccion.listaAlimentos.Contains(alimentoIngresado))
@@ -41,7 +41,7 @@ namespace LibreriaDeClases
         }
 
         //Métodos para ordenar la lista en asc y desc
-        public List<Alimento> OrdenarEnFormaCreciente(string clave)
+        public List<T> OrdenarEnFormaCreciente(string clave)
         {
             if(clave == "nombre")
             {
@@ -53,7 +53,7 @@ namespace LibreriaDeClases
             }
             return listaAlimentos;
         }
-        public List<Alimento> OrdenarEnFormaDecreciente(string clave)
+        public List<T> OrdenarEnFormaDecreciente(string clave)
         {
             if (clave == "nombre")
             {
@@ -103,11 +103,12 @@ namespace LibreriaDeClases
             return listaAlimento;
           
         }
-        public static void SerializarListaAlimentos(List<Alimento> listaAlimentos)
+        public static void SerializarListaAlimentos(List<T> listaAlimentos)
         {
             string json = JsonConvert.SerializeObject(listaAlimentos, Formatting.Indented);
             File.WriteAllText("alimentos.json", json);
         }
+
 
     }
 }

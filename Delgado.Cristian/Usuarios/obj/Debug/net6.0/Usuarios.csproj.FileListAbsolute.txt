@@ -10,3 +10,15 @@ C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\Usua
 C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.pdb
 C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\ref\Usuarios.dll
 C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.csproj.AssemblyReference.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\bin\Debug\net6.0\Usuarios.deps.json
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\bin\Debug\net6.0\Usuarios.dll
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\bin\Debug\net6.0\Usuarios.pdb
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.csproj.AssemblyReference.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.AssemblyInfoInputs.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.AssemblyInfo.cs
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.csproj.CoreCompileInputs.cache
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.dll
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\refint\Usuarios.dll
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\Usuarios.pdb
+C:\Users\crist\Source\Repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Usuarios\obj\Debug\net6.0\ref\Usuarios.dll

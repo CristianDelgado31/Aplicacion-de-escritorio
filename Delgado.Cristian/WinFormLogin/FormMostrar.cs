@@ -1,4 +1,5 @@
 ﻿using LibreriaDeClases;
+using BaseDeDatos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,23 @@ namespace WinFormLogin
     public partial class FormMostrar : Form
     {
         private WinFormPrincipal principal;
-        private ColeccionGenerica listaGenerica;
+        private ColeccionGenerica<Alimento> listaGenerica;
+        private AccesoDatos conexionBD;
         public FormMostrar()
         {
+            conexionBD = new AccesoDatos();
+            listaGenerica = new ColeccionGenerica<Alimento>();
             InitializeComponent();
         }
-        public FormMostrar(WinFormPrincipal principal, ColeccionGenerica listaGenerica) : this()
+        public FormMostrar(WinFormPrincipal principal) : this()
+        {
+            this.principal = principal;
+        }
+        public FormMostrar(WinFormPrincipal principal, ColeccionGenerica<Alimento> listaGenerica, AccesoDatos conexionBD) : this()
         {
             this.principal = principal;
             this.listaGenerica = listaGenerica;
+            this.conexionBD = conexionBD;
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
@@ -51,7 +60,20 @@ namespace WinFormLogin
             frmModificar.ShowDialog();
             if (frmModificar.DialogResult == DialogResult.OK)
             {
-                this.listaGenerica.listaAlimentos[indice] = frmModificar.alimentoNuevo;
+                if(frmModificar.alimentoNuevo is Fruta fruta)
+                {
+                    conexionBD.ModificarAlimento(fruta, null, null);
+                }
+                else if(frmModificar.alimentoNuevo is Verdura verdura)
+                {
+                    conexionBD.ModificarAlimento(null, verdura, null);
+                }
+                else if(frmModificar.alimentoNuevo is Carne carne)
+                {
+                    conexionBD.ModificarAlimento(null, null, carne);
+                }
+                listaGenerica.listaAlimentos.Clear();
+                listaGenerica.listaAlimentos = conexionBD.CrearListaGenerica(listaGenerica.listaAlimentos);
                 this.ActualizarListBox();
             }
         }

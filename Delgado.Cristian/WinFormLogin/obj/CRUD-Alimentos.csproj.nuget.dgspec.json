@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj": {}
+    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj",
         "projectName": "LibreriaDeClases",
-        "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj",
+        "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\LibreriaDeClases\\obj\\",
+        "outputPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,79 @@
         }
       }
     },
-    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj": {
+    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\BaseDeDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\BaseDeDatos.csproj",
+        "projectName": "BaseDeDatos",
+        "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\BaseDeDatos.csproj",
+        "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+                "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj",
         "projectName": "Usuarios",
-        "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj",
+        "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\Usuarios\\obj\\",
+        "outputPath": "C:\\Users\\crist\\Source\\Repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -126,14 +191,14 @@
         }
       }
     },
-    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj": {
+    "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj",
+        "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj",
         "projectName": "CRUD-Alimentos",
-        "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj",
+        "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\WinFormLogin\\CRUD-Alimentos.csproj",
         "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\WinFormLogin\\obj\\",
+        "outputPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\WinFormLogin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -150,11 +215,14 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj": {
-                "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj"
+              "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj": {
+                "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj"
               },
-              "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj": {
-                "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.PrimerParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj"
+              "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\BaseDeDatos.csproj": {
+                "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\BaseDeDatos.csproj"
+              },
+              "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj": {
+                "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj"
               }
             }
           }

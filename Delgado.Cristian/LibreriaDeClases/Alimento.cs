@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibreriaDeClases
 {
-    public abstract class Alimento
+    public abstract class Alimento : IPropiedadesAlimento
     {
         /// <summary>
         /// Atributo de la clase Alimento y sus clases derivadas.
