@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CRUD-Alimentos.Properties {
+namespace WinFormLogin.Properties {
     using System;
     
     

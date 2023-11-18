@@ -23,7 +23,7 @@ namespace WinFormLogin
         private bool botonFrutas;
         private bool botonVerduras;
         private bool botonCarnes;
-        private Alimento? alimentoAModificar;
+        private Alimento? alimentoSeleccionado;
         private FormMostrarListaGenerica formlistaGenerica;
         private BaseDeDatosAlimentos conexionBD;
 
@@ -104,7 +104,7 @@ namespace WinFormLogin
                 {
                     if (item.Empresa == empresa && item.Codigo == codigo)
                     {
-                        alimentoAModificar = item;
+                        alimentoSeleccionado = item;
                         break;
                     }
                 }
@@ -114,9 +114,9 @@ namespace WinFormLogin
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (alimentoAModificar is not null)
+            if (alimentoSeleccionado is not null)
             {
-                FormAgregarOModificarAlimentos frmModificar = new FormAgregarOModificarAlimentos(alimentoAModificar, true);
+                FormAgregarOModificarAlimentos frmModificar = new FormAgregarOModificarAlimentos(alimentoSeleccionado, true);
                 frmModificar.ShowDialog();
                 if (frmModificar.DialogResult == DialogResult.OK)
                 {
@@ -143,7 +143,7 @@ namespace WinFormLogin
                 }
                 else
                 {
-                    alimentoAModificar = null;
+                    alimentoSeleccionado = null;
                 }
             }
             else
@@ -181,24 +181,28 @@ namespace WinFormLogin
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (alimentoAModificar is not null)
+            if (alimentoSeleccionado is not null)
             {
-                int index = coleccionGenerica.listaAlimentos.IndexOf(alimentoAModificar);
+                //int index = coleccionGenerica.listaAlimentos.IndexOf(alimentoAModificar);
 
                 DialogResult dialogResult = MessageBox.Show("¿Desea eliminar este elemento?", "Ventana eliminar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    bool eliminar = coleccionGenerica - alimentoAModificar;
-                    if (eliminar == true)
-                    {
-                        MessageBox.Show("Se elimino el elemento exitosamente!");
-                    }
+                    //bool eliminar = coleccionGenerica - alimentoAModificar;
+                    //if (eliminar == true)
+                    //{
+                    //    MessageBox.Show("Se elimino el elemento exitosamente!");
+                    //}
+                    conexionBD.EliminarRegistroAlimento(alimentoSeleccionado);
+                    coleccionGenerica.listaAlimentos.Clear();
+                    coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
                     ActualizarListaGenerica();
                     dtvListaAlimentos.Visible = false;
+                    MessageBox.Show("Se elimino el elemento exitosamente!");
                 }
                 else
                 {
-                    alimentoAModificar = null;
+                    alimentoSeleccionado = null;
                 }
 
             }

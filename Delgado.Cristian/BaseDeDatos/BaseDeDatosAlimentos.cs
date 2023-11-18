@@ -246,5 +246,36 @@ namespace BaseDeDatos
             finally { if (this.conexion.State == System.Data.ConnectionState.Open) { this.conexion.Close(); } }
             return retorno;
         }
+        public bool EliminarRegistroAlimento(Alimento alimento)
+        {
+            bool retorno = false;
+            try
+            {
+                this.comando = new SqlCommand();
+                this.comando.Parameters.AddWithValue("@Codigo", alimento.Codigo);
+                this.comando.Parameters.AddWithValue("@Empresa", alimento.Empresa);
+                this.comando.CommandType = System.Data.CommandType.Text;
+                this.comando.CommandText = "delete tabla_Frutas where Codigo = @Codigo and Empresa = @Empresa";
+
+                this.comando.Connection = this.conexion;
+                this.conexion.Open();
+                int filasAfectadas = this.comando.ExecuteNonQuery();
+                if (filasAfectadas > 0)
+                { retorno = true; }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                if (this.conexion.State == System.Data.ConnectionState.Open)
+                {
+                    this.conexion.Close();
+                }
+            }
+            return retorno;
+        }
+
     }
 }
