@@ -36,14 +36,14 @@ namespace LibreriaDeClases
         /// <summary>
         /// Constructor de la clase derivada Verdura de la clase base Alimento
         /// </summary>
-        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, bool seCocina) : base(nombre, colorDelAlimento, codigo, empresa)
+        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa,int unidades, bool seCocina) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.seCocina = seCocina;
         }
         /// <summary>
         /// Constructor de la clase derivada Verdura de la clase base Alimento
         /// </summary>
-        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa, bool seCocina, bool esUnaHoja) : base(nombre, colorDelAlimento, codigo, unidades, empresa)
+        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa, bool seCocina, bool esUnaHoja) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.seCocina = seCocina;
             this.esUnaHoja = esUnaHoja;
@@ -51,10 +51,9 @@ namespace LibreriaDeClases
         /// <summary>
         /// Constructor de la clase derivada Verdura de la clase base Alimento
         /// </summary>
-        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades, bool esUnaHoja, bool seCocina) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
+        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, bool esUnaHoja,int unidades) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.esUnaHoja = esUnaHoja;
-            this.seCocina = seCocina;
         }
         protected override string MostrarDatos()
         {

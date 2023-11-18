@@ -37,14 +37,14 @@ namespace LibreriaDeClases
         /// <summary>
         /// Clase derivada Fruta de la clase base Alimento
         /// </summary>
-        public Fruta(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, bool cascaraComestible) : base(nombre, colorDelAlimento, codigo, empresa)
+        public Fruta(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades, bool cascaraComestible) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.cascaraComestible = cascaraComestible;
         }
         /// <summary>
         /// Clase derivada Fruta de la clase base Alimento
         /// </summary>
-        public Fruta(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa, bool esCitrico, bool cascaraComestible) : base(nombre, colorDelAlimento, codigo, unidades, empresa)
+        public Fruta(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa, bool esCitrico, bool cascaraComestible) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.esCitrico = esCitrico;
             this.cascaraComestible = cascaraComestible;
@@ -52,9 +52,8 @@ namespace LibreriaDeClases
         /// <summary>
         /// Clase derivada Fruta de la clase base Alimento
         /// </summary>
-        public Fruta(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades, bool cascaraComestible, bool esCitrico) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
+        public Fruta(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, bool esCitrico, int unidades) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
-            this.cascaraComestible = cascaraComestible;
             this.esCitrico = esCitrico;
         }
         protected override string MostrarDatos()

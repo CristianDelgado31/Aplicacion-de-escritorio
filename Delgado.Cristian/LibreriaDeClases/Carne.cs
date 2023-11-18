@@ -38,7 +38,8 @@ namespace LibreriaDeClases
         /// <summary>
         /// Clase derivada Carne de la clase base Alimento
         /// </summary>
-        public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, string origenDeLaCarne) : base(nombre, colorDelAlimento, codigo, empresa)
+        public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades, 
+            string origenDeLaCarne) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.origenDeLaCarne = origenDeLaCarne;
             this.ubicacionDelCorte = string.Empty;
@@ -47,7 +48,7 @@ namespace LibreriaDeClases
         /// Clase derivada Carne de la clase base Alimento
         /// </summary>
         public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa, string origenDeLaCarne,
-            string ubicacionDelCorte) : base(nombre, colorDelAlimento, codigo, unidades, empresa)
+            string ubicacionDelCorte) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.origenDeLaCarne = origenDeLaCarne;
             this.ubicacionDelCorte = ubicacionDelCorte;
@@ -55,7 +56,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Clase derivada Carne de la clase base Alimento
         /// </summary>
-        public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades, string ubicacionDelCorte,
+        public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, string ubicacionDelCorte, int unidades,
             string origenDeLaCarne) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.ubicacionDelCorte = ubicacionDelCorte;

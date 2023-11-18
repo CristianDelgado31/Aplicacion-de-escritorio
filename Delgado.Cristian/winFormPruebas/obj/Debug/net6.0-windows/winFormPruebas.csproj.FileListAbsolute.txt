@@ -1,0 +1,17 @@
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\bin\Debug\net6.0-windows\winFormPruebas.exe
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\bin\Debug\net6.0-windows\winFormPruebas.deps.json
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\bin\Debug\net6.0-windows\winFormPruebas.runtimeconfig.json
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\bin\Debug\net6.0-windows\winFormPruebas.dll
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\bin\Debug\net6.0-windows\winFormPruebas.pdb
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.Form1.resources
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.csproj.GenerateResource.cache
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.AssemblyInfoInputs.cache
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.AssemblyInfo.cs
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.csproj.CoreCompileInputs.cache
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.dll
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\refint\winFormPruebas.dll
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.pdb
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.genruntimeconfig.cache
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\ref\winFormPruebas.dll
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\winFormPruebas\obj\Debug\net6.0-windows\winFormPruebas.Properties.Resources.resources

@@ -64,41 +64,33 @@ namespace LibreriaDeClases
 
         public Alimento()
         {
-
+            this.nombre = string.Empty;
+            this.codigo = string.Empty;
+            this.empresa = string.Empty;
         }
         #region Constructores sobrecargados
         /// <summary>
         /// Constructor de la clase Alimento
         /// </summary>
-        public Alimento(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa)
+        public Alimento(string nombre, string codigo, string empresa):this()
         {
             this.nombre = nombre;
-            this.colorDelAlimento = colorDelAlimento;
             this.codigo = codigo;
-            this.empresa = empresa;
-            this.unidades = 1;
-        }
-        /// <summary>
-        /// Constructor de la clase Alimento
-        /// </summary>
-        public Alimento(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa)
-        {
-            this.nombre = nombre;
-            this.colorDelAlimento = colorDelAlimento;
-            this.codigo = codigo;
-            this.unidades = unidades;
             this.empresa = empresa;
         }
         /// <summary>
         /// Constructor de la clase Alimento
         /// </summary>
-        public Alimento(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades)
+        public Alimento(string nombre, string codigo, int unidades, string empresa):this(nombre, codigo, empresa)
         {
-            this.nombre = nombre;
-            this.colorDelAlimento = colorDelAlimento;
-            this.codigo = codigo;
-            this.empresa = empresa;
             this.unidades = unidades;
+        }
+        /// <summary>
+        /// Constructor de la clase Alimento
+        /// </summary>
+        public Alimento(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades):this(nombre, codigo, unidades, empresa)
+        {
+            this.colorDelAlimento = colorDelAlimento;
         }
         #endregion
 
