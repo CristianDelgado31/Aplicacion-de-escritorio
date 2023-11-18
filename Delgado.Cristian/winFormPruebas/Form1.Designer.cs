@@ -142,7 +142,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(-1, 54);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(803, 396);
+            pictureBox1.Size = new Size(803, 397);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
@@ -167,8 +167,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
-            TransparentLocation(lblCorreo, pictureBox1);
-            TransparentLocation(lblContrasenia, pictureBox1);
         }
 
         private void TransparentLocation(Label label, PictureBox pictureBox)

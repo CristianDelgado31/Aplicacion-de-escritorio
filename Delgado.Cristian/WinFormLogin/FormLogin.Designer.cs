@@ -3,12 +3,12 @@
     partial class FormLogin
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,119 +23,171 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            lblLogin = new Label();
-            lblCorreo = new Label();
-            lblContrasenia = new Label();
-            txtClave = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            panelNavbar = new Panel();
+            label3 = new Label();
+            btnSalir = new Button();
+            btnIniciarSesion = new Button();
+            txtContrasenia = new TextBox();
             txtCorreo = new TextBox();
-            btnLogin = new Button();
-            gbLogin = new GroupBox();
-            gbLogin.SuspendLayout();
+            lblContrasenia = new Label();
+            lblCorreo = new Label();
+            pictureBox1 = new PictureBox();
+            panelNavbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // lblLogin
+            // panelNavbar
             // 
-            lblLogin.AutoSize = true;
-            lblLogin.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            lblLogin.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLogin.ForeColor = SystemColors.Control;
-            lblLogin.Location = new Point(240, 68);
-            lblLogin.Name = "lblLogin";
-            lblLogin.Size = new Size(95, 37);
-            lblLogin.TabIndex = 0;
-            lblLogin.Text = "LOGIN";
+            panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(label3);
+            panelNavbar.Controls.Add(btnSalir);
+            panelNavbar.Location = new Point(-1, -2);
+            panelNavbar.Name = "panelNavbar";
+            panelNavbar.Size = new Size(793, 49);
+            panelNavbar.TabIndex = 11;
             // 
-            // lblCorreo
+            // label3
             // 
-            lblCorreo.AutoSize = true;
-            lblCorreo.ForeColor = SystemColors.Control;
-            lblCorreo.Location = new Point(138, 136);
-            lblCorreo.Name = "lblCorreo";
-            lblCorreo.Size = new Size(43, 15);
-            lblCorreo.TabIndex = 1;
-            lblCorreo.Text = "Correo";
+            label3.AutoSize = true;
+            label3.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(13, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 26);
+            label3.TabIndex = 1;
+            label3.Text = "LOGIN";
+            // 
+            // btnSalir
+            // 
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.IndianRed;
+            btnSalir.Location = new Point(741, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(57, 46);
+            btnSalir.TabIndex = 0;
+            btnSalir.Text = "X";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnIniciarSesion
+            // 
+            btnIniciarSesion.BackColor = Color.Black;
+            btnIniciarSesion.FlatStyle = FlatStyle.Flat;
+            btnIniciarSesion.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnIniciarSesion.ForeColor = Color.LavenderBlush;
+            btnIniciarSesion.Location = new Point(319, 322);
+            btnIniciarSesion.Name = "btnIniciarSesion";
+            btnIniciarSesion.Size = new Size(156, 32);
+            btnIniciarSesion.TabIndex = 16;
+            btnIniciarSesion.Text = "INICIAR SESION";
+            btnIniciarSesion.UseVisualStyleBackColor = false;
+            btnIniciarSesion.Click += btnIniciarSesion_Click_1;
+            // 
+            // txtContrasenia
+            // 
+            txtContrasenia.BackColor = Color.Black;
+            txtContrasenia.BorderStyle = BorderStyle.None;
+            txtContrasenia.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContrasenia.ForeColor = Color.LavenderBlush;
+            txtContrasenia.Location = new Point(292, 219);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(208, 24);
+            txtContrasenia.TabIndex = 15;
+            // 
+            // txtCorreo
+            // 
+            txtCorreo.BackColor = Color.Black;
+            txtCorreo.BorderStyle = BorderStyle.None;
+            txtCorreo.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCorreo.ForeColor = Color.LavenderBlush;
+            txtCorreo.Location = new Point(292, 128);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(208, 24);
+            txtCorreo.TabIndex = 14;
             // 
             // lblContrasenia
             // 
             lblContrasenia.AutoSize = true;
-            lblContrasenia.ForeColor = SystemColors.Control;
-            lblContrasenia.Location = new Point(138, 214);
+            lblContrasenia.BackColor = Color.Transparent;
+            lblContrasenia.Font = new Font("Impact", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContrasenia.ForeColor = Color.LavenderBlush;
+            lblContrasenia.Location = new Point(292, 185);
             lblContrasenia.Name = "lblContrasenia";
-            lblContrasenia.Size = new Size(67, 15);
-            lblContrasenia.TabIndex = 2;
-            lblContrasenia.Text = "Contraseña";
+            lblContrasenia.Size = new Size(75, 17);
+            lblContrasenia.TabIndex = 13;
+            lblContrasenia.Text = "CONTRASEÑA";
             // 
-            // txtClave
+            // lblCorreo
             // 
-            txtClave.Location = new Point(138, 241);
-            txtClave.Name = "txtClave";
-            txtClave.PasswordChar = '*';
-            txtClave.Size = new Size(277, 23);
-            txtClave.TabIndex = 3;
+            lblCorreo.AutoSize = true;
+            lblCorreo.BackColor = Color.Transparent;
+            lblCorreo.Font = new Font("Impact", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCorreo.ForeColor = Color.LavenderBlush;
+            lblCorreo.Location = new Point(292, 97);
+            lblCorreo.Name = "lblCorreo";
+            lblCorreo.Size = new Size(54, 17);
+            lblCorreo.TabIndex = 12;
+            lblCorreo.Text = "USUARIO";
             // 
-            // txtCorreo
+            // pictureBox1
             // 
-            txtCorreo.Location = new Point(138, 165);
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(277, 23);
-            txtCorreo.TabIndex = 4;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-1, 53);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(793, 398);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
             // 
-            // btnLogin
-            // 
-            btnLogin.BackColor = System.Drawing.Color.OrangeRed;
-            btnLogin.ForeColor = SystemColors.HighlightText;
-            btnLogin.Location = new Point(222, 306);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(126, 57);
-            btnLogin.TabIndex = 6;
-            btnLogin.Text = "Ingresar";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
-            // 
-            // gbLogin
-            // 
-            gbLogin.BackColor = System.Drawing.Color.FromArgb(64, 64, 64);
-            gbLogin.Controls.Add(lblLogin);
-            gbLogin.Controls.Add(lblCorreo);
-            gbLogin.Controls.Add(txtClave);
-            gbLogin.Controls.Add(btnLogin);
-            gbLogin.Controls.Add(txtCorreo);
-            gbLogin.Controls.Add(lblContrasenia);
-            gbLogin.Location = new Point(33, 23);
-            gbLogin.Name = "gbLogin";
-            gbLogin.Size = new Size(545, 401);
-            gbLogin.TabIndex = 7;
-            gbLogin.TabStop = false;
-            // 
-            // Login
+            // FormLoginNuevo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.Peru;
-            ClientSize = new Size(608, 450);
-            Controls.Add(gbLogin);
-            ForeColor = SystemColors.ControlText;
-            Name = "Login";
+            ClientSize = new Size(792, 450);
+            Controls.Add(btnIniciarSesion);
+            Controls.Add(txtContrasenia);
+            Controls.Add(txtCorreo);
+            Controls.Add(lblContrasenia);
+            Controls.Add(lblCorreo);
+            Controls.Add(panelNavbar);
+            Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FormLoginNuevo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
-            gbLogin.ResumeLayout(false);
-            gbLogin.PerformLayout();
+            Text = "FormLoginNuevo";
+            panelNavbar.ResumeLayout(false);
+            panelNavbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
+            TransparentLocation(lblCorreo, pictureBox1);
+            TransparentLocation(lblContrasenia, pictureBox1);
         }
 
+        private void TransparentLocation(Label label, PictureBox pictureBox)
+        {
+            label.Location = pictureBox.PointToClient(this.PointToScreen(label.Location));
+            label.Parent = pictureBox;
+        }
         #endregion
 
-        private Label lblLogin;
-        private Label lblCorreo;
-        private Label lblContrasenia;
-        private TextBox txtClave;
+        private Panel panelNavbar;
+        private Label label3;
+        private Button btnSalir;
+        private Button btnIniciarSesion;
+        private TextBox txtContrasenia;
         private TextBox txtCorreo;
-        private Button btnLogin;
-        private GroupBox gbLogin;
+        private Label lblContrasenia;
+        private Label lblCorreo;
+        private PictureBox pictureBox1;
     }
 }

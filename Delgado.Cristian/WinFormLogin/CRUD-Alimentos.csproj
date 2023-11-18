@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FormLoginNuevo.cs~RFcf51e9.TMP" />
     <None Remove="FormMostrarAlimentos.Designer.cs~RF189263d.TMP" />
     <None Remove="WinFormPrincipal.Designer.cs~RF13ab3c8.TMP" />
   </ItemGroup>
