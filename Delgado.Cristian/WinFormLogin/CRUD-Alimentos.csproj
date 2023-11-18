@@ -9,9 +9,29 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LibreriaDeClases\LibreriaDeClases.csproj" />
-    <ProjectReference Include="..\MostrarDatos\BaseDeDatos.csproj" />
+    <None Remove="FormMostrarAlimentos.Designer.cs~RF189263d.TMP" />
+    <None Remove="WinFormPrincipal.Designer.cs~RF13ab3c8.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BaseDeDatos\BaseDeDatos.csproj" />
+    <ProjectReference Include="..\LibreriaDeClases\Entidades.csproj" />
     <ProjectReference Include="..\Usuarios\Usuarios.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

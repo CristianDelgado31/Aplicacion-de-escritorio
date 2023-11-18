@@ -729,7 +729,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "LibreriaDeClases": "1.0.0",
+          "Entidades": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.2"
         },
         "compile": {
@@ -739,17 +739,17 @@
           "bin/placeholder/BaseDeDatos.dll": {}
         }
       },
-      "LibreriaDeClases/1.0.0": {
+      "Entidades/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Newtonsoft.Json": "13.0.3"
         },
         "compile": {
-          "bin/placeholder/LibreriaDeClases.dll": {}
+          "bin/placeholder/Entidades.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LibreriaDeClases.dll": {}
+          "bin/placeholder/Entidades.dll": {}
         }
       },
       "Usuarios/1.0.0": {
@@ -2081,13 +2081,13 @@
     },
     "BaseDeDatos/1.0.0": {
       "type": "project",
-      "path": "../MostrarDatos/BaseDeDatos.csproj",
-      "msbuildProject": "../MostrarDatos/BaseDeDatos.csproj"
+      "path": "../BaseDeDatos/BaseDeDatos.csproj",
+      "msbuildProject": "../BaseDeDatos/BaseDeDatos.csproj"
     },
-    "LibreriaDeClases/1.0.0": {
+    "Entidades/1.0.0": {
       "type": "project",
-      "path": "../LibreriaDeClases/LibreriaDeClases.csproj",
-      "msbuildProject": "../LibreriaDeClases/LibreriaDeClases.csproj"
+      "path": "../LibreriaDeClases/Entidades.csproj",
+      "msbuildProject": "../LibreriaDeClases/Entidades.csproj"
     },
     "Usuarios/1.0.0": {
       "type": "project",
@@ -2098,7 +2098,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "BaseDeDatos >= 1.0.0",
-      "LibreriaDeClases >= 1.0.0",
+      "Entidades >= 1.0.0",
       "Usuarios >= 1.0.0"
     ]
   },
@@ -2129,11 +2129,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj": {
-              "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj"
+            "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\BaseDeDatos\\BaseDeDatos.csproj": {
+              "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\BaseDeDatos\\BaseDeDatos.csproj"
             },
-            "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\BaseDeDatos.csproj": {
-              "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\MostrarDatos\\BaseDeDatos.csproj"
+            "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\Entidades.csproj"
             },
             "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj": {
               "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj"

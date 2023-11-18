@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Entidades;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Atributo de la clase Alimento y sus clases derivadas.
         /// </summary>
-        protected Color colorDelAlimento;
+        protected ColorAlimento colorDelAlimento;
         /// <summary>
         /// Atributo de la clase Alimento y sus clases derivadas.
         /// </summary>
@@ -53,7 +54,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Propiedad de la clase Alimento y de las clases derivadas
         /// </summary>
-        public Color ColorDelAlimento { get { return colorDelAlimento; } }
+        public ColorAlimento ColorDelAlimento { get { return colorDelAlimento; } }
         /// <summary>
         /// Propiedad de la clase Alimento y de las clases derivadas
         /// </summary>
@@ -69,7 +70,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Constructor de la clase Alimento
         /// </summary>
-        public Alimento(string nombre, Color colorDelAlimento, string codigo, string empresa)
+        public Alimento(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa)
         {
             this.nombre = nombre;
             this.colorDelAlimento = colorDelAlimento;
@@ -80,7 +81,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Constructor de la clase Alimento
         /// </summary>
-        public Alimento(string nombre, Color colorDelAlimento, string codigo, int unidades, string empresa)
+        public Alimento(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa)
         {
             this.nombre = nombre;
             this.colorDelAlimento = colorDelAlimento;
@@ -91,7 +92,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Constructor de la clase Alimento
         /// </summary>
-        public Alimento(string nombre, Color colorDelAlimento, string codigo, string empresa, int unidades)
+        public Alimento(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades)
         {
             this.nombre = nombre;
             this.colorDelAlimento = colorDelAlimento;
@@ -188,13 +189,14 @@ namespace LibreriaDeClases
         #endregion
 
         #region Sobrecarga de métodos
-        public string MostrarDatoIngresado(string dato)
+        public static DateOnly MostrarFechaHora()
         {
-            return dato;
+            DateOnly fecha = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            return fecha;
         }
-        public int MostrarDatoIngresado(int dato)
+        public static string MostrarFechaHora(string hora)
         {
-            return dato;
+            return hora = $"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}";
         }
         #endregion
     }

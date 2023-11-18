@@ -1,5 +1,50 @@
 [
   {
+    "OrigenDeLaCarne": "Vaca",
+    "UbicacionDelCorte": "Intestino",
+    "Codigo": "KDK23KA",
+    "Nombre": "Chinchulin",
+    "Unidades": 512,
+    "ColorDelAlimento": 2,
+    "Empresa": "AchurasPepe"
+  },
+  {
+    "EsCitrico": true,
+    "CascaraComestible": false,
+    "Codigo": "1",
+    "Nombre": "Kiwi",
+    "Unidades": 77,
+    "ColorDelAlimento": 3,
+    "Empresa": "dsada"
+  },
+  {
+    "SeCocina": false,
+    "EsUnaHoja": true,
+    "Codigo": "CCVA55",
+    "Nombre": "Lechuga",
+    "Unidades": 312,
+    "ColorDelAlimento": 3,
+    "Empresa": "LechugasARG"
+  },
+  {
+    "EsCitrico": true,
+    "CascaraComestible": true,
+    "Codigo": "3",
+    "Nombre": "Manzana",
+    "Unidades": 68,
+    "ColorDelAlimento": 1,
+    "Empresa": "MandarinasBR"
+  },
+  {
+    "OrigenDeLaCarne": "Vaca",
+    "UbicacionDelCorte": "costilla",
+    "Codigo": "DJSAJ123",
+    "Nombre": "Matambre",
+    "Unidades": 21,
+    "ColorDelAlimento": 1,
+    "Empresa": "CarniceriaElAMIGO"
+  },
+  {
     "EsCitrico": false,
     "CascaraComestible": true,
     "Codigo": "2",
@@ -11,55 +56,10 @@
   {
     "SeCocina": true,
     "EsUnaHoja": false,
-    "Codigo": "123AB",
-    "Nombre": "Papa",
-    "Unidades": 15,
-    "ColorDelAlimento": 2,
-    "Empresa": "PapasBR"
-  },
-  {
-    "EsCitrico": true,
-    "CascaraComestible": false,
-    "Codigo": "3",
-    "Nombre": "Mandarinas",
-    "Unidades": 51,
-    "ColorDelAlimento": 0,
-    "Empresa": "MandarinasBR"
-  },
-  {
-    "EsCitrico": false,
-    "CascaraComestible": false,
-    "Codigo": "1",
-    "Nombre": "banana",
+    "Codigo": "CHD31",
+    "Nombre": "Zanahoria",
     "Unidades": 32,
-    "ColorDelAlimento": 2,
-    "Empresa": "dsada"
-  },
-  {
-    "EsCitrico": true,
-    "CascaraComestible": false,
-    "Codigo": "CD3131",
-    "Nombre": "Kiwi",
-    "Unidades": 14,
-    "ColorDelAlimento": 3,
-    "Empresa": "KIWIARG"
-  },
-  {
-    "EsCitrico": true,
-    "CascaraComestible": false,
-    "Codigo": "CR7000",
-    "Nombre": "Naranja",
-    "Unidades": 31,
     "ColorDelAlimento": 0,
-    "Empresa": "NaranjasBR"
-  },
-  {
-    "EsCitrico": false,
-    "CascaraComestible": true,
-    "Codigo": "CASJ321",
-    "Nombre": "Pera",
-    "Unidades": 41,
-    "ColorDelAlimento": 2,
-    "Empresa": "PeritasARG"
+    "Empresa": "ZanahoriasSA"
   }
 ]

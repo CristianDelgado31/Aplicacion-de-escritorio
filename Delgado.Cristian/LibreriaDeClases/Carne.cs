@@ -38,7 +38,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Clase derivada Carne de la clase base Alimento
         /// </summary>
-        public Carne(string nombre, Color colorDelAlimento, string codigo, string empresa, string origenDeLaCarne) : base(nombre, colorDelAlimento, codigo, empresa)
+        public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, string origenDeLaCarne) : base(nombre, colorDelAlimento, codigo, empresa)
         {
             this.origenDeLaCarne = origenDeLaCarne;
             this.ubicacionDelCorte = string.Empty;
@@ -46,7 +46,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Clase derivada Carne de la clase base Alimento
         /// </summary>
-        public Carne(string nombre, Color colorDelAlimento, string codigo, int unidades, string empresa, string origenDeLaCarne,
+        public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa, string origenDeLaCarne,
             string ubicacionDelCorte) : base(nombre, colorDelAlimento, codigo, unidades, empresa)
         {
             this.origenDeLaCarne = origenDeLaCarne;
@@ -55,7 +55,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Clase derivada Carne de la clase base Alimento
         /// </summary>
-        public Carne(string nombre, Color colorDelAlimento, string codigo, string empresa, int unidades, string ubicacionDelCorte,
+        public Carne(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades, string ubicacionDelCorte,
             string origenDeLaCarne) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.ubicacionDelCorte = ubicacionDelCorte;
@@ -64,18 +64,6 @@ namespace LibreriaDeClases
         protected override string MostrarDatos()
         {
             return $"{codigo}    {nombre}    {colorDelAlimento}    {empresa}    {unidades}    {origenDeLaCarne}    {ubicacionDelCorte}";
-        }
-        public override bool Equals(object? obj)
-        {
-            bool result = false;
-            if (obj is Carne)
-            {
-                if (this == (Carne)obj)
-                {
-                    result = true;
-                }
-            }
-            return result;
         }
         public override string ToString()
         {

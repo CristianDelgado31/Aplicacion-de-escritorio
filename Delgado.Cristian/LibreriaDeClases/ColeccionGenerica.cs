@@ -1,10 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Entidades;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+
 namespace LibreriaDeClases
 {
     public class ColeccionGenerica<T> : IColeccionGenerica<T>
@@ -18,11 +20,11 @@ namespace LibreriaDeClases
         public static bool operator +(ColeccionGenerica<T> coleccion, T alimentoIngresado)
         {
             bool resultado = true;
-            if(coleccion.listaAlimentos.Contains(alimentoIngresado))
+            if (coleccion.listaAlimentos.Contains(alimentoIngresado))
             {
                 resultado = false;
             }
-            if(resultado == true)
+            if (resultado == true)
             {
                 coleccion.listaAlimentos.Add(alimentoIngresado);
             }
@@ -43,11 +45,11 @@ namespace LibreriaDeClases
         //Métodos para ordenar la lista en asc y desc
         public List<T> OrdenarEnFormaCreciente(string clave)
         {
-            if(clave == "nombre")
+            if (clave == "nombre")
             {
                 listaAlimentos = listaAlimentos.OrderBy(a => a.Nombre).ToList();
             }
-            else if(clave == "unidad")
+            else if (clave == "unidad")
             {
                 listaAlimentos = listaAlimentos.OrderBy(a => a.Unidades).ToList();
             }
@@ -108,7 +110,6 @@ namespace LibreriaDeClases
             string json = JsonConvert.SerializeObject(listaAlimentos, Formatting.Indented);
             File.WriteAllText("alimentos.json", json);
         }
-
 
     }
 }

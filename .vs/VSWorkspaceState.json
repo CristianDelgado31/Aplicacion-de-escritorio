@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Delgado.Cristian"
+    "\\Delgado.Cristian",
+    "\\Delgado.Cristian\\MostrarDatos"
   ],
-  "SelectedNode": "\\Delgado.Cristian\\Delgado.Cristian.sln",
+  "SelectedNode": "\\Delgado.Cristian\\MostrarDatos\\AccesoDatos.cs",
   "PreviewInSolutionExplorer": false
 }

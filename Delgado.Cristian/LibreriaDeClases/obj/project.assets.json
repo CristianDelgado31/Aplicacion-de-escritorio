@@ -60,11 +60,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\crist\\Source\\Repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj",
-      "projectName": "LibreriaDeClases",
-      "projectPath": "C:\\Users\\crist\\Source\\Repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\LibreriaDeClases.csproj",
+      "projectUniqueName": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\Entidades.csproj",
+      "projectName": "Entidades",
+      "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\Entidades.csproj",
       "packagesPath": "C:\\Users\\crist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\crist\\Source\\Repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\obj\\",
+      "outputPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\crist\\AppData\\Roaming\\NuGet\\NuGet.Config",

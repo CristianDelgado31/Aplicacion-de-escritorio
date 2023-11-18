@@ -36,14 +36,14 @@ namespace LibreriaDeClases
         /// <summary>
         /// Constructor de la clase derivada Verdura de la clase base Alimento
         /// </summary>
-        public Verdura(string nombre, Color colorDelAlimento, string codigo, string empresa, bool seCocina) : base(nombre, colorDelAlimento, codigo, empresa)
+        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, bool seCocina) : base(nombre, colorDelAlimento, codigo, empresa)
         {
             this.seCocina = seCocina;
         }
         /// <summary>
         /// Constructor de la clase derivada Verdura de la clase base Alimento
         /// </summary>
-        public Verdura(string nombre, Color colorDelAlimento, string codigo, int unidades, string empresa, bool seCocina, bool esUnaHoja) : base(nombre, colorDelAlimento, codigo, unidades, empresa)
+        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, int unidades, string empresa, bool seCocina, bool esUnaHoja) : base(nombre, colorDelAlimento, codigo, unidades, empresa)
         {
             this.seCocina = seCocina;
             this.esUnaHoja = esUnaHoja;
@@ -51,7 +51,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Constructor de la clase derivada Verdura de la clase base Alimento
         /// </summary>
-        public Verdura(string nombre, Color colorDelAlimento, string codigo, string empresa, int unidades, bool esUnaHoja, bool seCocina) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
+        public Verdura(string nombre, ColorAlimento colorDelAlimento, string codigo, string empresa, int unidades, bool esUnaHoja, bool seCocina) : base(nombre, colorDelAlimento, codigo, empresa, unidades)
         {
             this.esUnaHoja = esUnaHoja;
             this.seCocina = seCocina;
@@ -59,18 +59,6 @@ namespace LibreriaDeClases
         protected override string MostrarDatos()
         {
             return $"{codigo}    {nombre}    {colorDelAlimento}    {empresa}    {unidades}    {esUnaHoja}    {seCocina}";
-        }
-        public override bool Equals(object? obj)
-        {
-            bool result = false;
-            if (obj is Verdura)
-            {
-                if (this == (Verdura)obj)
-                {
-                    result = true;
-                }
-            }
-            return result;
         }
         public override string ToString()
         {
