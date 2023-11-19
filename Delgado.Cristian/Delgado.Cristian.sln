@@ -18,8 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseDeDatos", "BaseDeDatos\BaseDeDatos.csproj", "{534181BE-1301-4FDA-8CEB-ED03C350AC7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "winFormPruebas", "winFormPruebas\winFormPruebas.csproj", "{335BD9AA-0C16-443A-9940-3B010E1138CF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +44,6 @@ Global
 		{534181BE-1301-4FDA-8CEB-ED03C350AC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{534181BE-1301-4FDA-8CEB-ED03C350AC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{534181BE-1301-4FDA-8CEB-ED03C350AC7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{335BD9AA-0C16-443A-9940-3B010E1138CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{335BD9AA-0C16-443A-9940-3B010E1138CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{335BD9AA-0C16-443A-9940-3B010E1138CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{335BD9AA-0C16-443A-9940-3B010E1138CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

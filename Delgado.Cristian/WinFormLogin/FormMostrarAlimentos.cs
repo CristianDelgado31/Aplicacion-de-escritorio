@@ -49,7 +49,6 @@ namespace WinFormLogin
 
         private void FormMostrarAlimentos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //formlistaGenerica.Close();
             principal.Show();
         }
 
@@ -133,8 +132,6 @@ namespace WinFormLogin
                         conexionBD.ModificarAlimento(null, null, carne);
                     }
 
-                    //int index = coleccionGenerica.listaAlimentos.IndexOf(alimentoAModificar);
-                    //coleccionGenerica.listaAlimentos[index] = frmModificar.alimentoNuevo;
                     coleccionGenerica.listaAlimentos.Clear();
                     coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
                     ActualizarListaGenerica();
@@ -183,16 +180,9 @@ namespace WinFormLogin
         {
             if (alimentoSeleccionado is not null)
             {
-                //int index = coleccionGenerica.listaAlimentos.IndexOf(alimentoAModificar);
-
                 DialogResult dialogResult = MessageBox.Show("¿Desea eliminar este elemento?", "Ventana eliminar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //bool eliminar = coleccionGenerica - alimentoAModificar;
-                    //if (eliminar == true)
-                    //{
-                    //    MessageBox.Show("Se elimino el elemento exitosamente!");
-                    //}
                     conexionBD.EliminarRegistroAlimento(alimentoSeleccionado);
                     coleccionGenerica.listaAlimentos.Clear();
                     coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
@@ -247,6 +237,11 @@ namespace WinFormLogin
         {
             formlistaGenerica = new FormMostrarListaGenerica(this, coleccionGenerica);
             formlistaGenerica.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

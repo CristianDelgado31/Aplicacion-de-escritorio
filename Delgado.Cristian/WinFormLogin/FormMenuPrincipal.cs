@@ -19,14 +19,14 @@ namespace WinFormLogin
         private FormLogin login;
         private Usuario usuario;
         private ColeccionGenerica<Alimento> coleccionGenerica;
-        private DateTime dateTime;
-        private DateOnly fecha;
         private List<USuarioLog>? listUsuariosLog;
         private USuarioLog usuarioLog;
         private FormMostrarRegistroActividad frmMostrarRegistroActividad;
         private string ubicacionArchivo;
         private bool serializarAutomatico;
         private BaseDeDatosAlimentos conexionBD;
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
 
 
         public FormMenuPrincipal()
@@ -36,9 +36,10 @@ namespace WinFormLogin
             coleccionGenerica = new ColeccionGenerica<Alimento>();
             listUsuariosLog = new List<USuarioLog>();
             frmMostrarRegistroActividad = new FormMostrarRegistroActividad();
-            dateTime = DateTime.Now;
-            fecha = new DateOnly(dateTime.Year, dateTime.Month, dateTime.Day);
             InitializeComponent();
+            panelNavbar.MouseDown += PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += PanelNavBar_MouseMove;
         }
         public FormMenuPrincipal(FormLogin login, Usuario usuario) : this()
         {
@@ -47,6 +48,25 @@ namespace WinFormLogin
             usuarioLog = new USuarioLog(this.usuario.nombre, this.usuario.apellido, Alimento.MostrarFechaHora(), Alimento.MostrarFechaHora("hora"));
             MostrarUsuario();
         }
+        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p1 = new Point(e.X, e.Y);
+                Point p2 = PointToScreen(p1);
+                Point p3 = new Point(p2.X - startPoint.X, p2.Y - startPoint.Y);
+                Location = p3;
+            }
+        }
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -54,8 +74,6 @@ namespace WinFormLogin
         private void MostrarUsuario()
         {
             lblSaludo.Text = $"Bievenido {usuario.nombre} {usuario.apellido}";
-            lblPerfil.Text = $"Perfil: {usuario.perfil}";
-            gbUsuario.Visible = true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -77,10 +95,10 @@ namespace WinFormLogin
 
         private void WinFormPrincipal_Load(object sender, EventArgs e)
         {
-            //string rutaAlimentos = ubicacionArchivo + @"\alimentos.json";
-            //if (File.Exists(rutaAlimentos))
-            //    coleccionGenerica.listaAlimentos = ColeccionGenerica<Alimento>.DeserializarListaAlimentos(rutaAlimentos);
-
+            if (conexionBD.PruebaConexion())
+                MessageBox.Show("Conexion exitosa con la base de datos!");
+            else
+                MessageBox.Show(conexionBD.mensajeError.ToString());
 
             string rutaRegistroUsuarios = ubicacionArchivo + @"\registroActividad.json";
 
@@ -101,7 +119,7 @@ namespace WinFormLogin
                 listUsuariosLog = listUsuariosLog = USuarioLog.DeserializarUsuariosLog();
                 listUsuariosLog.Add(usuarioLog);
             }
-            //ColeccionGenerica<Alimento>.SerializarListaAlimentos(coleccionGenerica.listaAlimentos);
+
             USuarioLog.SerializarRegistroActividad(listUsuariosLog);
             login.Show();
 
@@ -111,24 +129,29 @@ namespace WinFormLogin
             serializarAutomatico = true;
             frmMostrarRegistroActividad = new FormMostrarRegistroActividad(listUsuariosLog, usuarioLog, this);
             this.Hide();
-            if(frmMostrarRegistroActividad.ShowDialog() == DialogResult.OK)
+            if (frmMostrarRegistroActividad.ShowDialog() == DialogResult.OK)
             {
-                
+
             }
             else
             {
                 this.Show();
-                if(frmMostrarRegistroActividad.listaActualizada.Count > 0) 
+                if (frmMostrarRegistroActividad.listaActualizada.Count > 0)
                 {
                     listUsuariosLog = frmMostrarRegistroActividad.listaActualizada;
                 }
                 else
                 {
-                    serializarAutomatico=false;
+                    serializarAutomatico = false;
                 }
                 frmMostrarRegistroActividad.Close();
             }
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

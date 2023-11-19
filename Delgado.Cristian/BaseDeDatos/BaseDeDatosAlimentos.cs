@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using Microsoft.Data.SqlClient;
 using LibreriaDeClases;
+using System.Text;
 
 namespace BaseDeDatos
 {
@@ -10,6 +11,7 @@ namespace BaseDeDatos
         private SqlCommand comando;
         private SqlDataReader lector;
         private static string cadenaConexion;
+        public StringBuilder mensajeError;
 
         static BaseDeDatosAlimentos()
         {
@@ -48,9 +50,13 @@ namespace BaseDeDatos
                 this.conexion.Open();
                 retorno = true;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                mensajeError = new StringBuilder();
+                mensajeError.AppendLine($"Error SQL: {ex.Message}");
+                mensajeError.AppendLine($"Número de error: {ex.Number}");
+                mensajeError.AppendLine($"Estado: {ex.State}");
+                mensajeError.AppendLine($"Procedimiento almacenado: {ex.Procedure}");
             }
             finally
             {
@@ -90,9 +96,13 @@ namespace BaseDeDatos
                 if (filasAfectadas > 0)
                 { retorno = true; }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                mensajeError = new StringBuilder();
+                mensajeError.AppendLine($"Error SQL: {ex.Message}");
+                mensajeError.AppendLine($"Número de error: {ex.Number}");
+                mensajeError.AppendLine($"Estado: {ex.State}");
+                mensajeError.AppendLine($"Procedimiento almacenado: {ex.Procedure}");
             }
             finally { if (this.conexion.State == System.Data.ConnectionState.Open) { this.conexion.Close(); } }
             return retorno;
@@ -180,9 +190,13 @@ namespace BaseDeDatos
                 }
                 lector.Close();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                mensajeError = new StringBuilder();
+                mensajeError.AppendLine($"Error SQL: {ex.Message}");
+                mensajeError.AppendLine($"Número de error: {ex.Number}");
+                mensajeError.AppendLine($"Estado: {ex.State}");
+                mensajeError.AppendLine($"Procedimiento almacenado: {ex.Procedure}");
             }
             finally
             {
@@ -239,9 +253,13 @@ namespace BaseDeDatos
                 if (filasAfectadas > 0)
                 { retorno = true; }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                mensajeError = new StringBuilder();
+                mensajeError.AppendLine($"Error SQL: {ex.Message}");
+                mensajeError.AppendLine($"Número de error: {ex.Number}");
+                mensajeError.AppendLine($"Estado: {ex.State}");
+                mensajeError.AppendLine($"Procedimiento almacenado: {ex.Procedure}");
             }
             finally { if (this.conexion.State == System.Data.ConnectionState.Open) { this.conexion.Close(); } }
             return retorno;
@@ -255,7 +273,16 @@ namespace BaseDeDatos
                 this.comando.Parameters.AddWithValue("@Codigo", alimento.Codigo);
                 this.comando.Parameters.AddWithValue("@Empresa", alimento.Empresa);
                 this.comando.CommandType = System.Data.CommandType.Text;
-                this.comando.CommandText = "delete tabla_Frutas where Codigo = @Codigo and Empresa = @Empresa";
+
+                string nombreTabla;
+                if (alimento is Fruta)
+                    nombreTabla = "tabla_Frutas";
+                else if (alimento is Carne)
+                    nombreTabla = "tabla_Carnes";
+                else
+                    nombreTabla = "tabla_Verduras";
+
+                this.comando.CommandText = $"delete {nombreTabla} where Codigo = @Codigo and Empresa = @Empresa";
 
                 this.comando.Connection = this.conexion;
                 this.conexion.Open();
@@ -263,9 +290,13 @@ namespace BaseDeDatos
                 if (filasAfectadas > 0)
                 { retorno = true; }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                mensajeError = new StringBuilder();
+                mensajeError.AppendLine($"Error SQL: {ex.Message}");
+                mensajeError.AppendLine($"Número de error: {ex.Number}");
+                mensajeError.AppendLine($"Estado: {ex.State}");
+                mensajeError.AppendLine($"Procedimiento almacenado: {ex.Procedure}");
             }
             finally
             {

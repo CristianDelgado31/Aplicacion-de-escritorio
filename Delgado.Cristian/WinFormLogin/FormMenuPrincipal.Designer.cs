@@ -28,23 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             btnCerrarSesion = new Button();
             btnAgregar = new Button();
             btnMostrar = new Button();
             lblSaludo = new Label();
-            gbUsuario = new GroupBox();
-            lblPerfil = new Label();
+            pictureBox1 = new PictureBox();
             btnHistorialDeActividad = new Button();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
-            gbUsuario.SuspendLayout();
+            panelNavbar = new Panel();
+            label3 = new Label();
+            btnSalir = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
             // btnCerrarSesion
             // 
             btnCerrarSesion.BackColor = Color.Red;
             btnCerrarSesion.ForeColor = SystemColors.Control;
-            btnCerrarSesion.Location = new Point(686, 29);
+            btnCerrarSesion.Location = new Point(736, 80);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(90, 35);
             btnCerrarSesion.TabIndex = 0;
@@ -82,41 +86,27 @@
             lblSaludo.BackColor = Color.Chocolate;
             lblSaludo.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             lblSaludo.ForeColor = SystemColors.HighlightText;
-            lblSaludo.Location = new Point(53, 38);
+            lblSaludo.Location = new Point(338, 63);
             lblSaludo.Name = "lblSaludo";
             lblSaludo.Size = new Size(182, 30);
             lblSaludo.TabIndex = 4;
             lblSaludo.Text = "¡Bienvenido Juan!";
             // 
-            // gbUsuario
+            // pictureBox1
             // 
-            gbUsuario.BackColor = Color.Peru;
-            gbUsuario.Controls.Add(lblPerfil);
-            gbUsuario.Controls.Add(lblSaludo);
-            gbUsuario.Location = new Point(253, 68);
-            gbUsuario.Name = "gbUsuario";
-            gbUsuario.Size = new Size(350, 226);
-            gbUsuario.TabIndex = 5;
-            gbUsuario.TabStop = false;
-            gbUsuario.Visible = false;
-            // 
-            // lblPerfil
-            // 
-            lblPerfil.AutoSize = true;
-            lblPerfil.BackColor = Color.Chocolate;
-            lblPerfil.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPerfil.ForeColor = SystemColors.HighlightText;
-            lblPerfil.Location = new Point(110, 106);
-            lblPerfil.Name = "lblPerfil";
-            lblPerfil.Size = new Size(187, 28);
-            lblPerfil.TabIndex = 5;
-            lblPerfil.Text = "Perfil: administrador";
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(215, 122);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(481, 230);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
             // 
             // btnHistorialDeActividad
             // 
             btnHistorialDeActividad.BackColor = Color.OrangeRed;
             btnHistorialDeActividad.ForeColor = SystemColors.HighlightText;
-            btnHistorialDeActividad.Location = new Point(668, 373);
+            btnHistorialDeActividad.Location = new Point(706, 389);
             btnHistorialDeActividad.Name = "btnHistorialDeActividad";
             btnHistorialDeActividad.Size = new Size(120, 49);
             btnHistorialDeActividad.TabIndex = 6;
@@ -134,25 +124,66 @@
             saveFileDialog1.FileName = "registroActividad";
             saveFileDialog1.Filter = "registroActividad.(*json)|*.json";
             // 
+            // panelNavbar
+            // 
+            panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(label3);
+            panelNavbar.Controls.Add(btnSalir);
+            panelNavbar.Location = new Point(-2, 1);
+            panelNavbar.Name = "panelNavbar";
+            panelNavbar.Size = new Size(868, 49);
+            panelNavbar.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(13, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(147, 26);
+            label3.TabIndex = 1;
+            label3.Text = "MENU PRINCIPAL";
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.Black;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.IndianRed;
+            btnSalir.Location = new Point(808, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(57, 46);
+            btnSalir.TabIndex = 0;
+            btnSalir.Text = "X";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(66, 66, 66);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(866, 472);
+            Controls.Add(lblSaludo);
+            Controls.Add(pictureBox1);
+            Controls.Add(panelNavbar);
             Controls.Add(btnHistorialDeActividad);
-            Controls.Add(gbUsuario);
             Controls.Add(btnMostrar);
             Controls.Add(btnAgregar);
             Controls.Add(btnCerrarSesion);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "WinFormPrincipal";
             FormClosing += WinFormPrincipal_FormClosing;
             Load += WinFormPrincipal_Load;
-            gbUsuario.ResumeLayout(false);
-            gbUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelNavbar.ResumeLayout(false);
+            panelNavbar.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -161,10 +192,12 @@
         private Button btnAgregar;
         private Button btnMostrar;
         private Label lblSaludo;
-        private GroupBox gbUsuario;
-        private Label lblPerfil;
         private Button btnHistorialDeActividad;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
+        private Panel panelNavbar;
+        private Label label3;
+        private Button btnSalir;
+        private PictureBox pictureBox1;
     }
 }

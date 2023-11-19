@@ -37,14 +37,18 @@
             btnOrdenar = new Button();
             label1 = new Label();
             btnGenerico = new Button();
+            panelNavbar = new Panel();
+            label3 = new Label();
+            btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)dtvListaAlimentos).BeginInit();
+            panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
             // dtvListaAlimentos
             // 
             dtvListaAlimentos.BackgroundColor = Color.Peru;
             dtvListaAlimentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtvListaAlimentos.Location = new Point(205, 39);
+            dtvListaAlimentos.Location = new Point(205, 68);
             dtvListaAlimentos.Name = "dtvListaAlimentos";
             dtvListaAlimentos.RowHeadersWidth = 40;
             dtvListaAlimentos.RowTemplate.Height = 25;
@@ -57,7 +61,7 @@
             // 
             btnVerduras.BackColor = Color.OrangeRed;
             btnVerduras.ForeColor = SystemColors.HighlightText;
-            btnVerduras.Location = new Point(59, 94);
+            btnVerduras.Location = new Point(59, 109);
             btnVerduras.Name = "btnVerduras";
             btnVerduras.Size = new Size(86, 38);
             btnVerduras.TabIndex = 1;
@@ -69,7 +73,7 @@
             // 
             btnFrutas.BackColor = Color.OrangeRed;
             btnFrutas.ForeColor = SystemColors.HighlightText;
-            btnFrutas.Location = new Point(59, 172);
+            btnFrutas.Location = new Point(59, 190);
             btnFrutas.Name = "btnFrutas";
             btnFrutas.Size = new Size(86, 39);
             btnFrutas.TabIndex = 2;
@@ -129,7 +133,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(7, 49);
+            label1.Location = new Point(7, 68);
             label1.Name = "label1";
             label1.Size = new Size(192, 21);
             label1.TabIndex = 14;
@@ -145,12 +149,49 @@
             btnGenerico.UseVisualStyleBackColor = true;
             btnGenerico.Click += btnGenerico_Click;
             // 
+            // panelNavbar
+            // 
+            panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(label3);
+            panelNavbar.Controls.Add(btnSalir);
+            panelNavbar.Location = new Point(-2, -2);
+            panelNavbar.Name = "panelNavbar";
+            panelNavbar.Size = new Size(887, 52);
+            panelNavbar.TabIndex = 16;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(13, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(141, 26);
+            label3.TabIndex = 1;
+            label3.Text = "MENU MOSTRAR";
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.Black;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.IndianRed;
+            btnSalir.Location = new Point(827, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(57, 46);
+            btnSalir.TabIndex = 0;
+            btnSalir.Text = "X";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // FormMostrarAlimentos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(881, 520);
+            Controls.Add(panelNavbar);
             Controls.Add(btnGenerico);
             Controls.Add(label1);
             Controls.Add(btnOrdenar);
@@ -160,12 +201,15 @@
             Controls.Add(btnFrutas);
             Controls.Add(btnVerduras);
             Controls.Add(dtvListaAlimentos);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormMostrarAlimentos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormMostrarAlimentos";
             FormClosing += FormMostrarAlimentos_FormClosing;
             Load += FormMostrarAlimentos_Load;
             ((System.ComponentModel.ISupportInitialize)dtvListaAlimentos).EndInit();
+            panelNavbar.ResumeLayout(false);
+            panelNavbar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,5 +225,8 @@
         private Button btnOrdenar;
         private Label label1;
         private Button btnGenerico;
+        private Panel panelNavbar;
+        private Label label3;
+        private Button btnSalir;
     }
 }

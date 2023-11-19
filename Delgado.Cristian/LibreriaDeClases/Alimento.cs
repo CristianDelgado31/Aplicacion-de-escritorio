@@ -50,7 +50,7 @@ namespace LibreriaDeClases
         /// <summary>
         /// Propiedad de la clase Alimento y de las clases derivadas
         /// </summary>
-        public int Unidades { get { return unidades; } }
+        public int Unidades {  get { return unidades; } }
         /// <summary>
         /// Propiedad de la clase Alimento y de las clases derivadas
         /// </summary>

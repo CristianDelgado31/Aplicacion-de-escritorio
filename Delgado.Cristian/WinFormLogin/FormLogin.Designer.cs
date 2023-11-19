@@ -49,7 +49,7 @@
             panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(-1, -2);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(793, 49);
+            panelNavbar.Size = new Size(843, 49);
             panelNavbar.TabIndex = 11;
             // 
             // label3
@@ -65,16 +65,17 @@
             // 
             // btnSalir
             // 
+            btnSalir.BackColor = Color.Black;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.IndianRed;
-            btnSalir.Location = new Point(741, 3);
+            btnSalir.Location = new Point(783, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(57, 46);
             btnSalir.TabIndex = 0;
             btnSalir.Text = "X";
-            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
             // btnIniciarSesion
@@ -83,7 +84,7 @@
             btnIniciarSesion.FlatStyle = FlatStyle.Flat;
             btnIniciarSesion.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnIniciarSesion.ForeColor = Color.LavenderBlush;
-            btnIniciarSesion.Location = new Point(319, 322);
+            btnIniciarSesion.Location = new Point(365, 327);
             btnIniciarSesion.Name = "btnIniciarSesion";
             btnIniciarSesion.Size = new Size(156, 32);
             btnIniciarSesion.TabIndex = 16;
@@ -97,7 +98,7 @@
             txtContrasenia.BorderStyle = BorderStyle.None;
             txtContrasenia.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtContrasenia.ForeColor = Color.LavenderBlush;
-            txtContrasenia.Location = new Point(292, 219);
+            txtContrasenia.Location = new Point(338, 243);
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
             txtContrasenia.Size = new Size(208, 24);
@@ -109,7 +110,7 @@
             txtCorreo.BorderStyle = BorderStyle.None;
             txtCorreo.Font = new Font("Impact", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtCorreo.ForeColor = Color.LavenderBlush;
-            txtCorreo.Location = new Point(292, 128);
+            txtCorreo.Location = new Point(338, 160);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(208, 24);
             txtCorreo.TabIndex = 14;
@@ -118,11 +119,11 @@
             // 
             lblContrasenia.AutoSize = true;
             lblContrasenia.BackColor = Color.Transparent;
-            lblContrasenia.Font = new Font("Impact", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContrasenia.Font = new Font("Impact", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblContrasenia.ForeColor = Color.LavenderBlush;
-            lblContrasenia.Location = new Point(292, 185);
+            lblContrasenia.Location = new Point(338, 212);
             lblContrasenia.Name = "lblContrasenia";
-            lblContrasenia.Size = new Size(75, 17);
+            lblContrasenia.Size = new Size(84, 19);
             lblContrasenia.TabIndex = 13;
             lblContrasenia.Text = "CONTRASEÑA";
             // 
@@ -130,29 +131,30 @@
             // 
             lblCorreo.AutoSize = true;
             lblCorreo.BackColor = Color.Transparent;
-            lblCorreo.Font = new Font("Impact", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCorreo.Font = new Font("Impact", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblCorreo.ForeColor = Color.LavenderBlush;
-            lblCorreo.Location = new Point(292, 97);
+            lblCorreo.Location = new Point(338, 122);
             lblCorreo.Name = "lblCorreo";
-            lblCorreo.Size = new Size(54, 17);
+            lblCorreo.Size = new Size(60, 19);
             lblCorreo.TabIndex = 12;
             lblCorreo.Text = "USUARIO";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, 53);
+            pictureBox1.Location = new Point(78, 83);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(793, 398);
+            pictureBox1.Size = new Size(693, 351);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 
-            // FormLoginNuevo
+            // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(792, 450);
+            BackColor = Color.Peru;
+            ClientSize = new Size(842, 481);
             Controls.Add(btnIniciarSesion);
             Controls.Add(txtContrasenia);
             Controls.Add(txtCorreo);
@@ -161,7 +163,7 @@
             Controls.Add(panelNavbar);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormLoginNuevo";
+            Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLoginNuevo";
             panelNavbar.ResumeLayout(false);

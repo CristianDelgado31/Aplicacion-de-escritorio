@@ -109,4 +109,4 @@ C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Win
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\CRUD-Alimentos.csproj.CopyComplete
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\CRUD-Alimentos.genruntimeconfig.cache
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\ref\CRUD-Alimentos.dll
-C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormLoginNuevo.resources
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormLogin.resources

@@ -1,4 +1,5 @@
 ﻿using BaseDeDatos;
+using Entidades;
 using LibreriaDeClases;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,16 @@ namespace WinFormLogin
         private ColeccionGenerica<Alimento> listaGenerica;
         private bool modificar;
         private BaseDeDatosAlimentos conexionBD;
+        private bool dragging = false;
+        private Point startPoint = new Point(0, 0);
 
         public FormAgregarOModificarAlimentos()
         {
             conexionBD = new BaseDeDatosAlimentos();
             InitializeComponent();
+            panelNavbar.MouseDown += PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += PanelNavBar_MouseMove;
         }
         public FormAgregarOModificarAlimentos(FormMenuPrincipal winFormPrincipal, ColeccionGenerica<Alimento> listaGenerica) : this()
         {
@@ -36,104 +42,180 @@ namespace WinFormLogin
             this.alimentoAModificar = alimentoSeleccionado;
             this.modificar = modificar;
         }
-
+        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p1 = new Point(e.X, e.Y);
+                Point p2 = PointToScreen(p1);
+                Point p3 = new Point(p2.X - startPoint.X, p2.Y - startPoint.Y);
+                Location = p3;
+            }
+        }
         private void VerificarDatos()
         {
             int unidad;
-            bool verificarUnidad = int.TryParse(txtUnidad.Text, out unidad);
-            ColorAlimento[] arrColores = (ColorAlimento[])Enum.GetValues(typeof(ColorAlimento));
-            ColorAlimento color = new ColorAlimento();
-            foreach (ColorAlimento elemento in arrColores)
+            try
             {
-                if (elemento.ToString() == cmbColores.Text)
+                bool verificarColor = false;
+                ColorAlimento[] arrColores = (ColorAlimento[])Enum.GetValues(typeof(ColorAlimento));
+                ColorAlimento color = new ColorAlimento();
+                foreach (ColorAlimento elemento in arrColores)
                 {
-                    color = elemento;
-                    break;
+                    if (elemento.ToString() == cmbColores.Text)
+                    {
+                        color = elemento;
+                        verificarColor = true;
+                        break;
+                    }
                 }
-            }
-            if (rbtnCarne.Checked)
-            {
-                if (verificarUnidad && unidad > 0)
+                if (txtCodigo.Text.Length == 0)
                 {
-                    alimentoNuevo = new Carne(txtNombre.Text, color, txtCodigo.Text, unidad, txtEmpresa.Text, txtOrigen.Text, txtUbicacionCorte.Text);
+                    throw new ExcepcionDatos("Complete el campo Codigo", "vacio");
                 }
-                else
-                    AlertaDatoIncorrecto("unidad");
-            }
-            else if (rbtnFruta.Checked)
-            {
-                bool cascaraComestible = false;
-                bool citrico = false;
-                if (rbtnSiCitrico.Checked)
-                    citrico = true;
-                if (rbtnSiComestible.Checked)
-                    cascaraComestible = true;
-                if (verificarUnidad && unidad > 0)
+
+                if (txtNombre.Text.Length < 4 || VerificarDatoIngresado(txtNombre.Text) == false)
                 {
+                    throw new ExcepcionDatos("Dato invalido en Nombre", txtNombre.Text);
+                }
+
+                if (verificarColor == false)
+                    throw new ExcepcionDatos("Dato ingresado en color no valido", cmbColores.Text);
+
+                if (int.TryParse(txtUnidad.Text, out unidad) == false)
+                {
+                    throw new ExcepcionDatos("Dato ingresado no valido en unidades", txtUnidad.Text);
+                }
+
+                if (unidad <= 0)
+                {
+                    throw new ExcepcionDatos("Dato numerico ingresado no valido", unidad.ToString());
+                }
+
+                if (txtEmpresa.Text.Length == 0)
+                    throw new ExcepcionDatos("No se ingresaron datos en empresa", txtEmpresa.Text);
+                if (VerificarDatoIngresado(txtEmpresa.Text) == false)
+                    throw new ExcepcionDatos("Dato ingresado no valido en empresa", txtEmpresa.Text);
+
+                if (rbtnCarne.Checked)
+                {
+                    if (VerificarDatoIngresado(txtUbicacionCorte.Text) == true && VerificarDatoIngresado(txtOrigen.Text) == true && txtUbicacionCorte.Text.Length > 1
+                        && txtOrigen.Text.Length > 1)
+                        alimentoNuevo = new Carne(txtNombre.Text, color, txtCodigo.Text, unidad, txtEmpresa.Text, txtOrigen.Text, txtUbicacionCorte.Text);
+                    else
+                        throw new ExcepcionDatos("Complete el/los campo/s restante/s", "");
+                }
+                else if (rbtnFruta.Checked)
+                {
+                    bool cascaraComestible = false;
+                    bool citrico = false;
+
+                    if (rbtnSiCitrico.Checked == false && rbtnNoCitrico.Checked == false && rbtnSiComestible.Checked == false && rbtnNoComestible.Checked == false)
+                        throw new ExcepcionDatos("Complete los campos restantes de fruta", "botones no fueron seleccionados");
+
+                    if (rbtnSiCitrico.Checked == true || rbtnNoCitrico.Checked == true && rbtnSiComestible.Checked == false && rbtnNoComestible.Checked == false)
+                        throw new ExcepcionDatos("Seleccione una opción de Cascara comestible", "");
+
+                    if (rbtnSiComestible.Checked == true || rbtnNoComestible.Checked == true && rbtnSiCitrico.Checked == false && rbtnNoCitrico.Checked == false)
+                        throw new ExcepcionDatos("Seleccione una opción de Cítrico", "");
+
+
+                    if (rbtnSiCitrico.Checked)
+                        citrico = true;
+                    if (rbtnSiComestible.Checked)
+                        cascaraComestible = true;
+
                     alimentoNuevo = new Fruta(txtNombre.Text, color, txtCodigo.Text, unidad, txtEmpresa.Text, citrico, cascaraComestible);
                 }
                 else
-                    AlertaDatoIncorrecto("unidad");
-            }
-            else
-            {
-                bool esUnaHoja = false;
-                bool seCocina = false;
-                if (rbtnSiCocina.Checked)
-                    seCocina = true;
-                if (rbtnSiHoja.Checked)
-                    esUnaHoja = true;
-                if (verificarUnidad == true && unidad > 0)
                 {
+                    bool esUnaHoja = false;
+                    bool seCocina = false;
+
+                    if (rbtnSiCocina.Checked == false && rbtnNoCocina.Checked == false && rbtnSiHoja.Checked == false && rbtnNoHoja.Checked == false)
+                        throw new ExcepcionDatos("Complete los campos restantes de verdura", "botones no fueron seleccionados");
+
+                    if (rbtnSiCocina.Checked == true || rbtnNoCocina.Checked == true && rbtnSiHoja.Checked == false && rbtnNoHoja.Checked == false)
+                        throw new ExcepcionDatos("Seleccione una opción de si es una hoja", "");
+
+                    if (rbtnSiHoja.Checked == true || rbtnNoHoja.Checked == true && rbtnSiCocina.Checked == false && rbtnNoCocina.Checked == false)
+                        throw new ExcepcionDatos("Seleccione una opción de si se cocina", "");
+
+                    if (rbtnSiCocina.Checked)
+                        seCocina = true;
+                    if (rbtnSiHoja.Checked)
+                        esUnaHoja = true;
+
                     alimentoNuevo = new Verdura(txtNombre.Text, color, txtCodigo.Text, unidad, txtEmpresa.Text, seCocina, esUnaHoja);
                 }
-                else
-                    AlertaDatoIncorrecto("unidad");
-            }
 
-            if (modificar == false && txtNombre.Text != "" && txtCodigo.Text != "" && txtEmpresa.Text != "" && txtUnidad.Text != "" && unidad > 0)
-            {
-                if (listaGenerica.listaAlimentos.Contains(alimentoNuevo))
+                if (modificar == false && txtNombre.Text != "" && txtCodigo.Text != "")
                 {
-                    AlertaDatoIncorrecto("alimento repetido");
-                }
-                else
-                {
-                    bool agregar = listaGenerica + alimentoNuevo;
-                    if (agregar == true)
+                    if (listaGenerica.listaAlimentos.Contains(alimentoNuevo))
                     {
-                        AlertaDatoIncorrecto("nuevo alimento");
-                        if (alimentoNuevo is Fruta fruta)
-                            conexionBD.AgregarAlimento(fruta, null, null);
-                        else if (alimentoNuevo is Verdura verdura)
-                            conexionBD.AgregarAlimento(null, verdura, null);
-                        else if (alimentoNuevo is Carne carne)
-                            conexionBD.AgregarAlimento(null, null, carne);
+                        AlertaDatoIncorrecto("alimento repetido");
+                    }
+                    else
+                    {
+                        bool agregar = listaGenerica + alimentoNuevo;
+                        if (agregar == true)
+                        {
+                            AlertaDatoIncorrecto("nuevo alimento");
+                            if (alimentoNuevo is Fruta fruta)
+                                conexionBD.AgregarAlimento(fruta, null, null);
+                            else if (alimentoNuevo is Verdura verdura)
+                                conexionBD.AgregarAlimento(null, verdura, null);
+                            else if (alimentoNuevo is Carne carne)
+                                conexionBD.AgregarAlimento(null, null, carne);
 
-                        this.Close();
-                        winPrincipal.Show();
+                            this.Close();
+                            winPrincipal.Show();
 
+                        }
                     }
                 }
+                else if (modificar == true && txtNombre.Text != "" && txtCodigo.Text != "")
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+
+
             }
-            else if (modificar == true && txtNombre.Text != "" && txtCodigo.Text != "" && txtEmpresa.Text != "" && txtUnidad.Text != "")
+            catch (ExcepcionDatos ex)
             {
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show(ex.Message + $"\nDato: {ex.DatoIngresado}");
             }
 
         }
+        private bool VerificarDatoIngresado(string datoAVerificar)
+        {
+            foreach (Char letra in datoAVerificar)
+            {
+                if (!Char.IsLetter(letra))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void AlertaDatoIncorrecto(string claveError)
         {
             string mensaje = string.Empty;
-            if (claveError == "unidad")
-            {
-                mensaje = "Ingrese un numero en el texto Unidad";
-            }
-            else if (claveError == "alimento repetido")
+            if (claveError == "alimento repetido")
             {
                 mensaje = "Ya existe un alimento con mismo codigo y empresa";
             }
-            else if(claveError == "nuevo alimento")
+            else if (claveError == "nuevo alimento")
             {
                 mensaje = "Se agrego un nuevo alimento";
             }
@@ -296,5 +378,9 @@ namespace WinFormLogin
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

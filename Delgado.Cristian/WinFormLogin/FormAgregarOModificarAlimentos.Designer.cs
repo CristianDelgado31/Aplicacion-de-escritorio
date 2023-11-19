@@ -67,6 +67,9 @@
             btnAgregar = new Button();
             btnConfirmar = new Button();
             btnCancelar = new Button();
+            panelNavbar = new Panel();
+            label3 = new Label();
+            button1 = new Button();
             groupbox.SuspendLayout();
             gbFormulario.SuspendLayout();
             gbCarne.SuspendLayout();
@@ -76,6 +79,7 @@
             gbFruta.SuspendLayout();
             gbCitrico.SuspendLayout();
             gbCascaraComestible.SuspendLayout();
+            panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
             // groupbox
@@ -86,7 +90,7 @@
             groupbox.Controls.Add(rbtnVerdura);
             groupbox.Controls.Add(rbtnFruta);
             groupbox.ForeColor = SystemColors.Control;
-            groupbox.Location = new Point(54, 84);
+            groupbox.Location = new Point(74, 118);
             groupbox.Name = "groupbox";
             groupbox.Size = new Size(175, 167);
             groupbox.TabIndex = 0;
@@ -144,7 +148,7 @@
             // 
             btnVolver.BackColor = Color.Red;
             btnVolver.ForeColor = SystemColors.Control;
-            btnVolver.Location = new Point(21, 25);
+            btnVolver.Location = new Point(23, 72);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(75, 23);
             btnVolver.TabIndex = 1;
@@ -169,7 +173,7 @@
             gbFormulario.Controls.Add(txtNombre);
             gbFormulario.Controls.Add(lblNombre);
             gbFormulario.ForeColor = SystemColors.Control;
-            gbFormulario.Location = new Point(314, 12);
+            gbFormulario.Location = new Point(314, 72);
             gbFormulario.Name = "gbFormulario";
             gbFormulario.Size = new Size(387, 527);
             gbFormulario.TabIndex = 2;
@@ -204,7 +208,7 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(20, 21);
+            label2.Location = new Point(21, 21);
             label2.Name = "label2";
             label2.Size = new Size(46, 15);
             label2.TabIndex = 20;
@@ -483,7 +487,7 @@
             // 
             btnAgregar.BackColor = Color.OrangeRed;
             btnAgregar.ForeColor = SystemColors.HighlightText;
-            btnAgregar.Location = new Point(89, 357);
+            btnAgregar.Location = new Point(105, 422);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(100, 38);
             btnAgregar.TabIndex = 3;
@@ -495,7 +499,7 @@
             // 
             btnConfirmar.BackColor = Color.OrangeRed;
             btnConfirmar.ForeColor = SystemColors.HighlightText;
-            btnConfirmar.Location = new Point(89, 308);
+            btnConfirmar.Location = new Point(105, 373);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(100, 43);
             btnConfirmar.TabIndex = 4;
@@ -508,7 +512,7 @@
             // 
             btnCancelar.BackColor = Color.OrangeRed;
             btnCancelar.ForeColor = SystemColors.HighlightText;
-            btnCancelar.Location = new Point(89, 401);
+            btnCancelar.Location = new Point(105, 466);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(100, 41);
             btnCancelar.TabIndex = 5;
@@ -517,18 +521,56 @@
             btnCancelar.Visible = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // panelNavbar
+            // 
+            panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(label3);
+            panelNavbar.Controls.Add(button1);
+            panelNavbar.Location = new Point(-3, -1);
+            panelNavbar.Name = "panelNavbar";
+            panelNavbar.Size = new Size(765, 52);
+            panelNavbar.TabIndex = 15;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Impact", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(13, 10);
+            label3.Name = "label3";
+            label3.Size = new Size(147, 26);
+            label3.TabIndex = 1;
+            label3.Text = "MENU PRINCIPAL";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.IndianRed;
+            button1.Location = new Point(712, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(53, 52);
+            button1.TabIndex = 0;
+            button1.Text = "X";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // FormAgregarOModificarAlimentos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(66, 66, 66);
-            ClientSize = new Size(722, 560);
+            ClientSize = new Size(761, 641);
+            Controls.Add(panelNavbar);
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);
             Controls.Add(btnAgregar);
             Controls.Add(gbFormulario);
             Controls.Add(btnVolver);
             Controls.Add(groupbox);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormAgregarOModificarAlimentos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "WinFormAgregar";
@@ -550,6 +592,8 @@
             gbCitrico.PerformLayout();
             gbCascaraComestible.ResumeLayout(false);
             gbCascaraComestible.PerformLayout();
+            panelNavbar.ResumeLayout(false);
+            panelNavbar.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -594,5 +638,8 @@
         private Label lblEmpresa;
         private Button btnConfirmar;
         private Button btnCancelar;
+        private Panel panelNavbar;
+        private Label label3;
+        private Button button1;
     }
 }
