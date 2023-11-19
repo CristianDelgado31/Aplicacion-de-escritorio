@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,14 +14,17 @@ namespace WinFormLogin
 {
     public partial class FormLogin : Form
     {
-        private bool dragging = false;
-        private Point startPoint = new Point(0, 0);
+        private bool dragging;
+        private Point startPoint;
         private List<Usuario>? usuarios;
         private FormMenuPrincipal formPrincipal;
+        
         public FormLogin()
         {
             InitializeComponent();
             usuarios = Usuario.DeserializarUsuarios();
+            dragging = false;
+            startPoint = new Point(0, 0);
             panelNavbar.MouseDown += PanelNavBar_MouseDown;
             panelNavbar.MouseUp += PanelNavBar_MouseUp;
             panelNavbar.MouseMove += PanelNavBar_MouseMove;
@@ -71,5 +75,6 @@ namespace WinFormLogin
             txtCorreo.Clear();
             txtContrasenia.Clear();
         }
+
     }
 }

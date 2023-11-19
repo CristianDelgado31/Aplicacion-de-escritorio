@@ -48,7 +48,7 @@
             // 
             btnCerrarSesion.BackColor = Color.Red;
             btnCerrarSesion.ForeColor = SystemColors.Control;
-            btnCerrarSesion.Location = new Point(736, 80);
+            btnCerrarSesion.Location = new Point(764, 65);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(90, 35);
             btnCerrarSesion.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             btnAgregar.BackColor = Color.OrangeRed;
             btnAgregar.ForeColor = SystemColors.HighlightText;
-            btnAgregar.Location = new Point(59, 137);
+            btnAgregar.Location = new Point(60, 169);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(98, 41);
             btnAgregar.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             btnMostrar.BackColor = Color.OrangeRed;
             btnMostrar.ForeColor = SystemColors.HighlightText;
-            btnMostrar.Location = new Point(59, 233);
+            btnMostrar.Location = new Point(60, 264);
             btnMostrar.Name = "btnMostrar";
             btnMostrar.Size = new Size(98, 41);
             btnMostrar.TabIndex = 3;
@@ -97,7 +97,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(215, 122);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(481, 230);
+            pictureBox1.Size = new Size(481, 271);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
@@ -106,7 +106,7 @@
             // 
             btnHistorialDeActividad.BackColor = Color.OrangeRed;
             btnHistorialDeActividad.ForeColor = SystemColors.HighlightText;
-            btnHistorialDeActividad.Location = new Point(706, 389);
+            btnHistorialDeActividad.Location = new Point(734, 411);
             btnHistorialDeActividad.Name = "btnHistorialDeActividad";
             btnHistorialDeActividad.Size = new Size(120, 49);
             btnHistorialDeActividad.TabIndex = 6;
@@ -141,9 +141,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(13, 10);
             label3.Name = "label3";
-            label3.Size = new Size(147, 26);
+            label3.Size = new Size(196, 26);
             label3.TabIndex = 1;
-            label3.Text = "MENU PRINCIPAL";
+            label3.Text = "FORM MENU PRINCIPAL";
             // 
             // btnSalir
             // 

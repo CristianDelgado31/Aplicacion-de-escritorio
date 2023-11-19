@@ -27,6 +27,19 @@
         "runtime": {
           "bin/placeholder/Entidades.dll": {}
         }
+      },
+      "Usuarios/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/Usuarios.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Usuarios.dll": {}
+        }
       }
     }
   },
@@ -65,11 +78,17 @@
       "type": "project",
       "path": "../LibreriaDeClases/Entidades.csproj",
       "msbuildProject": "../LibreriaDeClases/Entidades.csproj"
+    },
+    "Usuarios/1.0.0": {
+      "type": "project",
+      "path": "../Usuarios/Usuarios.csproj",
+      "msbuildProject": "../Usuarios/Usuarios.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Entidades >= 1.0.0"
+      "Entidades >= 1.0.0",
+      "Usuarios >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -101,6 +120,9 @@
           "projectReferences": {
             "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\Entidades.csproj": {
               "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\LibreriaDeClases\\Entidades.csproj"
+            },
+            "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj": {
+              "projectPath": "C:\\Users\\crist\\source\\repos\\Delgado.Cristian.SegundoParcial\\Delgado.Cristian\\Usuarios\\Usuarios.csproj"
             }
           }
         }

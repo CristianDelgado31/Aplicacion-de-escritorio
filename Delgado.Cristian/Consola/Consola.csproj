@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LibreriaDeClases\Entidades.csproj" />
+    <ProjectReference Include="..\Usuarios\Usuarios.csproj" />
   </ItemGroup>
 
 </Project>

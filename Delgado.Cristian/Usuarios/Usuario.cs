@@ -15,6 +15,7 @@ namespace Usuarios
         public static List<Usuario>? DeserializarUsuarios()
         {
             string directorioActual = Directory.GetCurrentDirectory();
+            Console.WriteLine(directorioActual);
             string ruta = directorioActual + @"\usuarioss.json";
 
             List<Usuario>? objArchivo;
@@ -24,6 +25,21 @@ namespace Usuarios
                 return objArchivo;
             }
             return null;
+        }
+
+        public static bool operator == (List<Usuario> ListaUsuarios, Usuario usuario)
+        {
+            bool resultado = false;
+            foreach (Usuario item in ListaUsuarios)
+            {
+                if(item.correo == usuario.correo && item.clave == usuario.clave)
+                    resultado =  true;
+            }
+            return resultado;
+        }
+        public static bool operator !=(List<Usuario> ListaUsuarios, Usuario usuario)
+        {
+            return !(ListaUsuarios == usuario);
         }
 
 

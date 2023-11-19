@@ -18,16 +18,18 @@ namespace WinFormLogin
         private FormMenuPrincipal winPrincipal;
         private Alimento alimentoAModificar;
         public Alimento alimentoNuevo;
-        private ColeccionGenerica<Alimento> listaGenerica;
+        private ColeccionGenerica<Alimento> coleccionGenerica;
         private bool modificar;
         private BaseDeDatosAlimentos conexionBD;
-        private bool dragging = false;
-        private Point startPoint = new Point(0, 0);
+        private bool dragging;
+        private Point startPoint;
 
         public FormAgregarOModificarAlimentos()
         {
             conexionBD = new BaseDeDatosAlimentos();
             InitializeComponent();
+            dragging = false;
+            startPoint = new Point(0, 0);
             panelNavbar.MouseDown += PanelNavBar_MouseDown;
             panelNavbar.MouseUp += PanelNavBar_MouseUp;
             panelNavbar.MouseMove += PanelNavBar_MouseMove;
@@ -35,7 +37,7 @@ namespace WinFormLogin
         public FormAgregarOModificarAlimentos(FormMenuPrincipal winFormPrincipal, ColeccionGenerica<Alimento> listaGenerica) : this()
         {
             this.winPrincipal = winFormPrincipal;
-            this.listaGenerica = listaGenerica;
+            this.coleccionGenerica = listaGenerica;
         }
         public FormAgregarOModificarAlimentos(Alimento alimentoSeleccionado, bool modificar) : this()
         {
@@ -160,16 +162,16 @@ namespace WinFormLogin
 
                 if (modificar == false && txtNombre.Text != "" && txtCodigo.Text != "")
                 {
-                    if (listaGenerica.listaAlimentos.Contains(alimentoNuevo))
+                    if (coleccionGenerica.listaAlimentos.Contains(alimentoNuevo))
                     {
-                        AlertaDatoIncorrecto("alimento repetido");
+                        MensajeEspecifico("alimento repetido");
                     }
                     else
                     {
-                        bool agregar = listaGenerica + alimentoNuevo;
+                        bool agregar = coleccionGenerica + alimentoNuevo;
                         if (agregar == true)
                         {
-                            AlertaDatoIncorrecto("nuevo alimento");
+                            MensajeEspecifico("nuevo alimento");
                             if (alimentoNuevo is Fruta fruta)
                                 conexionBD.AgregarAlimento(fruta, null, null);
                             else if (alimentoNuevo is Verdura verdura)
@@ -208,7 +210,7 @@ namespace WinFormLogin
             return true;
         }
 
-        private void AlertaDatoIncorrecto(string claveError)
+        private void MensajeEspecifico(string claveError)
         {
             string mensaje = string.Empty;
             if (claveError == "alimento repetido")

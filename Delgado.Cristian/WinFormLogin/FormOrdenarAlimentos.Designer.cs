@@ -34,7 +34,11 @@
             rbtnNombre = new RadioButton();
             rbtnUnidad = new RadioButton();
             gbOrdenamiento = new GroupBox();
+            panelNavbar = new Panel();
+            label2 = new Label();
+            btnSalir = new Button();
             gbOrdenamiento.SuspendLayout();
+            panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -42,7 +46,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.HighlightText;
-            label1.Location = new Point(41, 9);
+            label1.Location = new Point(64, 75);
             label1.Name = "label1";
             label1.Size = new Size(216, 21);
             label1.TabIndex = 0;
@@ -76,7 +80,7 @@
             // 
             rbtnNombre.AutoSize = true;
             rbtnNombre.ForeColor = SystemColors.HighlightText;
-            rbtnNombre.Location = new Point(38, 71);
+            rbtnNombre.Location = new Point(61, 137);
             rbtnNombre.Name = "rbtnNombre";
             rbtnNombre.Size = new Size(69, 19);
             rbtnNombre.TabIndex = 3;
@@ -88,7 +92,7 @@
             // 
             rbtnUnidad.AutoSize = true;
             rbtnUnidad.ForeColor = SystemColors.HighlightText;
-            rbtnUnidad.Location = new Point(38, 112);
+            rbtnUnidad.Location = new Point(61, 178);
             rbtnUnidad.Name = "rbtnUnidad";
             rbtnUnidad.Size = new Size(63, 19);
             rbtnUnidad.TabIndex = 4;
@@ -101,27 +105,67 @@
             gbOrdenamiento.BackColor = Color.Tan;
             gbOrdenamiento.Controls.Add(btnAscendente);
             gbOrdenamiento.Controls.Add(btnDescendente);
-            gbOrdenamiento.Location = new Point(141, 49);
+            gbOrdenamiento.Location = new Point(164, 115);
             gbOrdenamiento.Name = "gbOrdenamiento";
             gbOrdenamiento.Size = new Size(144, 100);
             gbOrdenamiento.TabIndex = 5;
             gbOrdenamiento.TabStop = false;
+            // 
+            // panelNavbar
+            // 
+            panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(label2);
+            panelNavbar.Controls.Add(btnSalir);
+            panelNavbar.Location = new Point(0, 0);
+            panelNavbar.Name = "panelNavbar";
+            panelNavbar.Size = new Size(354, 47);
+            panelNavbar.TabIndex = 16;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Impact", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(188, 21);
+            label2.TabIndex = 1;
+            label2.Text = "FORM ORDENAR ALIMENTOS";
+            // 
+            // btnSalir
+            // 
+            btnSalir.BackColor = Color.Black;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.IndianRed;
+            btnSalir.Location = new Point(297, 3);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(57, 44);
+            btnSalir.TabIndex = 0;
+            btnSalir.Text = "X";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FormOrdenarAlimentos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Peru;
-            ClientSize = new Size(315, 168);
+            ClientSize = new Size(352, 270);
+            Controls.Add(panelNavbar);
             Controls.Add(rbtnUnidad);
             Controls.Add(rbtnNombre);
             Controls.Add(gbOrdenamiento);
             Controls.Add(label1);
             ForeColor = SystemColors.Desktop;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FormOrdenarAlimentos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormOrdenar";
             gbOrdenamiento.ResumeLayout(false);
+            panelNavbar.ResumeLayout(false);
+            panelNavbar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -134,5 +178,8 @@
         private RadioButton rbtnNombre;
         private RadioButton rbtnUnidad;
         private GroupBox gbOrdenamiento;
+        private Panel panelNavbar;
+        private Label label2;
+        private Button btnSalir;
     }
 }

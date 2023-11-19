@@ -36,3 +36,5 @@ C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Con
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Consola\obj\Debug\net6.0\Consola.pdb
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Consola\obj\Debug\net6.0\Consola.genruntimeconfig.cache
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Consola\obj\Debug\net6.0\ref\Consola.dll
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Consola\bin\Debug\net6.0\Usuarios.dll
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Consola\bin\Debug\net6.0\Usuarios.pdb

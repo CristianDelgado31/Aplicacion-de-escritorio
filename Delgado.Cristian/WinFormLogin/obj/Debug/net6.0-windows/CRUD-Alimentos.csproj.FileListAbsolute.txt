@@ -57,9 +57,7 @@ C:\Users\crist\source\repos\Delgado.Cristian.PrimerParcial\Delgado.Cristian\WinF
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\CRUD-Alimentos.csproj.AssemblyReference.cache
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormAgregarOModificarAlimentos.resources
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormMenuPrincipal.resources
-C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormMostrarAlimentos.resources
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormMostrarListaGenerica.resources
-C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormMostrarRegistroActividad.resources
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormOrdenarAlimentos.resources
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\CRUD-Alimentos.Properties.Resources.resources
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\CRUD-Alimentos.csproj.GenerateResource.cache
@@ -110,3 +108,5 @@ C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\Win
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\CRUD-Alimentos.genruntimeconfig.cache
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\ref\CRUD-Alimentos.dll
 C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormLogin.resources
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormActividadUsuarios.resources
+C:\Users\crist\source\repos\Delgado.Cristian.SegundoParcial\Delgado.Cristian\WinFormLogin\obj\Debug\net6.0-windows\WinFormLogin.FormMenuMostrarAlimentos.resources

@@ -59,9 +59,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(13, 10);
             label3.Name = "label3";
-            label3.Size = new Size(60, 26);
+            label3.Size = new Size(109, 26);
             label3.TabIndex = 1;
-            label3.Text = "LOGIN";
+            label3.Text = "FORM LOGIN";
             // 
             // btnSalir
             // 
@@ -171,8 +171,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
-            TransparentLocation(lblCorreo, pictureBox1);
-            TransparentLocation(lblContrasenia, pictureBox1);
+            TransparentLocation(lblCorreo, pictureBox1 );
+            TransparentLocation(lblContrasenia, pictureBox1 );
         }
 
         private void TransparentLocation(Label label, PictureBox pictureBox)

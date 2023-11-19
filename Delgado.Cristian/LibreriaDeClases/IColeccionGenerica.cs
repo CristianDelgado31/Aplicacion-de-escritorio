@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     public interface IColeccionGenerica<T>
-        //Ver desp si rompe o no con el where : alimento
+        where T : Alimento
     {
         List<T> OrdenarEnFormaCreciente(string clave);
         List<T> OrdenarEnFormaDecreciente(string clave);

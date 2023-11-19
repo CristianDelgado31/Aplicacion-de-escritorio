@@ -538,9 +538,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(13, 10);
             label3.Name = "label3";
-            label3.Size = new Size(147, 26);
+            label3.Size = new Size(235, 26);
             label3.TabIndex = 1;
-            label3.Text = "MENU PRINCIPAL";
+            label3.Text = "FORM AGREGAR/MODIFICAR";
             // 
             // button1
             // 

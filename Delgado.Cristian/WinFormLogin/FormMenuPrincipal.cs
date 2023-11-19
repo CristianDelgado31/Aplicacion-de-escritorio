@@ -21,12 +21,12 @@ namespace WinFormLogin
         private ColeccionGenerica<Alimento> coleccionGenerica;
         private List<USuarioLog>? listUsuariosLog;
         private USuarioLog usuarioLog;
-        private FormMostrarRegistroActividad frmMostrarRegistroActividad;
+        private FormActividadUsuarios frmMostrarRegistroActividad;
         private string ubicacionArchivo;
         private bool serializarAutomatico;
         private BaseDeDatosAlimentos conexionBD;
-        private bool dragging = false;
-        private Point startPoint = new Point(0, 0);
+        private bool dragging;
+        private Point startPoint;
 
 
         public FormMenuPrincipal()
@@ -35,8 +35,10 @@ namespace WinFormLogin
             ubicacionArchivo = Directory.GetCurrentDirectory();
             coleccionGenerica = new ColeccionGenerica<Alimento>();
             listUsuariosLog = new List<USuarioLog>();
-            frmMostrarRegistroActividad = new FormMostrarRegistroActividad();
+            frmMostrarRegistroActividad = new FormActividadUsuarios();
             InitializeComponent();
+            dragging = false;
+            startPoint = new Point(0, 0);
             panelNavbar.MouseDown += PanelNavBar_MouseDown;
             panelNavbar.MouseUp += PanelNavBar_MouseUp;
             panelNavbar.MouseMove += PanelNavBar_MouseMove;
@@ -88,7 +90,7 @@ namespace WinFormLogin
         {
             coleccionGenerica.listaAlimentos.Clear();
             coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
-            FormMostrarAlimentos formMostrar = new FormMostrarAlimentos(this, coleccionGenerica, conexionBD);
+            FormMenuMostrarAlimentos formMostrar = new FormMenuMostrarAlimentos(this, coleccionGenerica, conexionBD);
             this.Hide();
             formMostrar.Show();
         }
@@ -127,7 +129,7 @@ namespace WinFormLogin
         private void btnHistorialDeActividad_Click(object sender, EventArgs e)
         {
             serializarAutomatico = true;
-            frmMostrarRegistroActividad = new FormMostrarRegistroActividad(listUsuariosLog, usuarioLog, this);
+            frmMostrarRegistroActividad = new FormActividadUsuarios(listUsuariosLog, usuarioLog, this);
             this.Hide();
             if (frmMostrarRegistroActividad.ShowDialog() == DialogResult.OK)
             {
