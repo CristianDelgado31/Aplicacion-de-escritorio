@@ -42,7 +42,6 @@ namespace LibreriaDeClases
             return resultado;
         }
 
-        //Métodos para ordenar la lista en asc y desc
         public List<T> OrdenarEnFormaCreciente(string clave)
         {
             if (clave == "nombre")
@@ -67,45 +66,6 @@ namespace LibreriaDeClases
             }
             return listaAlimentos;
         }
-
-        //public static List<Alimento> DeserializarListaAlimentos(string ubicacionArchivo)
-        //{
-        //    List<Alimento> listaAlimento = new();
-        //    string parseo = string.Empty;
-        //    using (StreamReader sr = new StreamReader(ubicacionArchivo))
-        //    {
-        //        string json_str = sr.ReadToEnd();
-        //        parseo = json_str;
-        //    }
-        //    List<DeserializarArchivoAlimentos>? listaDeserializada = JsonConvert.DeserializeObject<List<DeserializarArchivoAlimentos>>(parseo, new JsonSerializerSettings
-        //    {
-        //        TypeNameHandling = TypeNameHandling.All
-        //    });
-        //    Verdura verdura;
-        //    Fruta fruta;
-        //    Carne carne;
-        //    foreach (var item in listaDeserializada)
-        //    {
-        //        if (item.EsCitrico != null)
-        //        {
-        //            fruta = new Fruta(item.Nombre, item.ColorDelAlimento, item.Codigo, item.Unidades, item.Empresa, (bool)item.EsCitrico, item.CascaraComestible);
-        //            listaAlimento.Add(fruta);
-        //        }
-        //        else if (item.SeCocina != null)
-        //        {
-        //            verdura = new Verdura(item.Nombre, item.ColorDelAlimento, item.Codigo, item.Unidades, item.Empresa, (bool)item.SeCocina, item.EsUnaHoja);
-        //            listaAlimento.Add(verdura);
-        //        }
-        //        else
-        //        {
-        //            carne = new Carne(item.Nombre, item.ColorDelAlimento, item.Codigo, item.Unidades, item.Empresa, item.OrigenDeLaCarne, item.UbicacionDelCorte);
-        //            listaAlimento.Add(carne);
-        //        }
-        //    }
-        //    return listaAlimento;
-          
-        //}
-
         public static void SerializarListaAlimentos(List<T> listaAlimentos)
         {
             string json = JsonConvert.SerializeObject(listaAlimentos, Formatting.Indented);

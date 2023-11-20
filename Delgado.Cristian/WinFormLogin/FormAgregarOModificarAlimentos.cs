@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WinFormLogin
 {
-    public partial class FormAgregarOModificarAlimentos : Form
+    public partial class FormAgregarOModificarAlimentos : Form, IPanelNavbar
     {
         private FormMenuPrincipal winPrincipal;
         private Alimento alimentoAModificar;
@@ -24,18 +24,15 @@ namespace WinFormLogin
         private bool dragging;
         private Point startPoint;
 
-        private delegate void NotificarDatoErroneo(ExcepcionDatos excepcion);
-        private event NotificarDatoErroneo campoInvalido;
-
         public FormAgregarOModificarAlimentos()
         {
             conexionBD = new BaseDeDatosAlimentos();
             InitializeComponent();
             dragging = false;
             startPoint = new Point(0, 0);
-            panelNavbar.MouseDown += PanelNavBar_MouseDown;
-            panelNavbar.MouseUp += PanelNavBar_MouseUp;
-            panelNavbar.MouseMove += PanelNavBar_MouseMove;
+            panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
         }
         public FormAgregarOModificarAlimentos(FormMenuPrincipal winFormPrincipal, ColeccionGenerica<Alimento> listaGenerica) : this()
         {
@@ -47,16 +44,18 @@ namespace WinFormLogin
             this.alimentoAModificar = alimentoSeleccionado;
             this.modificar = modificar;
         }
-        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             startPoint = new Point(e.X, e.Y);
         }
-        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+
+        void IPanelNavbar.PanelNavBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
         }
-        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+
+        void IPanelNavbar.PanelNavBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
@@ -200,17 +199,11 @@ namespace WinFormLogin
             }
             catch (ExcepcionDatos ex)
             {
-                campoInvalido += MostrarCampoErroneo;
-                campoInvalido.Invoke(ex);
-                campoInvalido -= MostrarCampoErroneo;
-                //MessageBox.Show(ex.Message + $"\nDato: {ex.DatoIngresado}");
+                MessageBox.Show(ex.Message + $"\nDato: {ex.DatoIngresado}");
             }
 
         }
-        private void MostrarCampoErroneo(ExcepcionDatos ex)
-        {
-            MessageBox.Show(ex.Message + $"\nDato: {ex.DatoIngresado}");
-        }
+
         private bool VerificarDatoIngresado(string datoAVerificar)
         {
             foreach (Char letra in datoAVerificar)

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WinFormLogin
 {
-    public partial class FormMostrarListaGenerica : Form
+    public partial class FormMostrarListaGenerica : Form, IPanelNavbar
     {
         private FormMenuMostrarAlimentos formMostrarAlimentos;
         private ColeccionGenerica<Alimento> coleccionGenerica;
@@ -22,25 +22,24 @@ namespace WinFormLogin
             InitializeComponent();
             dragging = false;
             startPoint = new Point(0, 0);
-            panelNavbar.MouseDown += PanelNavBar_MouseDown;
-            panelNavbar.MouseUp += PanelNavBar_MouseUp;
-            panelNavbar.MouseMove += PanelNavBar_MouseMove;
+            panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
         }
-        public FormMostrarListaGenerica(FormMenuMostrarAlimentos formMostrarAlimentos, ColeccionGenerica<Alimento> coleccionGenerica) : this()
+        public FormMostrarListaGenerica(ColeccionGenerica<Alimento> coleccionGenerica) : this()
         {
-            this.formMostrarAlimentos = formMostrarAlimentos;
             this.coleccionGenerica = coleccionGenerica;
         }
-        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             startPoint = new Point(e.X, e.Y);
         }
-        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
         }
-        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {

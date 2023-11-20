@@ -14,10 +14,10 @@ using Usuarios;
 
 namespace WinFormLogin
 {
-    public partial class FormMenuPrincipal : Form
+    public partial class FormMenuPrincipal : Form, IPanelNavbar
     {
         private FormLogin login;
-        private Usuario usuario;
+        public Usuario usuario;
         private ColeccionGenerica<Alimento> coleccionGenerica;
         private List<USuarioLog>? listUsuariosLog;
         private USuarioLog usuarioLog;
@@ -27,11 +27,9 @@ namespace WinFormLogin
         private BaseDeDatosAlimentos conexionBD;
         private bool dragging;
         private Point startPoint;
-        //private bool permisoConexionDB;
-
         private delegate void NotificarConexionBaseDeDatos(string mensaje);
         private event NotificarConexionBaseDeDatos mensajeConexionBD;
-
+        public bool usuarioNoNuevo;
 
         public FormMenuPrincipal()
         {
@@ -43,9 +41,9 @@ namespace WinFormLogin
             InitializeComponent();
             dragging = false;
             startPoint = new Point(0, 0);
-            panelNavbar.MouseDown += PanelNavBar_MouseDown;
-            panelNavbar.MouseUp += PanelNavBar_MouseUp;
-            panelNavbar.MouseMove += PanelNavBar_MouseMove;
+            panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
         }
         public FormMenuPrincipal(FormLogin login, Usuario usuario) : this()
         {
@@ -54,16 +52,18 @@ namespace WinFormLogin
             usuarioLog = new USuarioLog(this.usuario.nombre, this.usuario.apellido, Alimento.MostrarFechaHora(), Alimento.MostrarFechaHora("hora"));
             MostrarUsuario();
         }
-        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             startPoint = new Point(e.X, e.Y);
         }
-        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+
+        void IPanelNavbar.PanelNavBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
         }
-        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+
+        void IPanelNavbar.PanelNavBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
@@ -82,31 +82,41 @@ namespace WinFormLogin
             lblSaludo.Text = $"Bievenido {usuario.nombre} {usuario.apellido}";
         }
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private async void btnAgregar_Click(object sender, EventArgs e)
         {
-            //Podria agregar un task
-            Task hiloObtenerListaDeLaBaseDeDatos = new Task(ObtenerListaDeLaBaseDeDatos);
-            hiloObtenerListaDeLaBaseDeDatos.Start();
+            if (usuario.perfil == "vendedor")
+            {
+                btnAgregar.Enabled = false;
+                MessageBox.Show("Su perfil no permite agregar/registrar alimentos");
+            }
+            else
+            {
+                coleccionGenerica.listaAlimentos = await ObtenerListaGenericaDeLaBaseDeDatos();
 
-            FormAgregarOModificarAlimentos winFormAgregar = new FormAgregarOModificarAlimentos(this, coleccionGenerica);
-            this.Hide();
-            winFormAgregar.ShowDialog();
+                FormAgregarOModificarAlimentos winFormAgregar = new FormAgregarOModificarAlimentos(this, coleccionGenerica);
+                this.Hide();
+                winFormAgregar.ShowDialog();
+            }
         }
 
-        private void btnMostrar_Click(object sender, EventArgs e)
+        private async void btnMostrar_Click(object sender, EventArgs e)
         {
             coleccionGenerica.listaAlimentos.Clear();
-            coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
+            coleccionGenerica.listaAlimentos = await ObtenerListaGenericaDeLaBaseDeDatos();
 
             FormMenuMostrarAlimentos formMostrar = new FormMenuMostrarAlimentos(this, coleccionGenerica, conexionBD);
             this.Hide();
             formMostrar.Show();
         }
-        private void ObtenerListaDeLaBaseDeDatos()
+        private async Task<List<Alimento>> ObtenerListaGenericaDeLaBaseDeDatos()
         {
-            coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
-        }
+            var task = new Task<List<Alimento>>(() => conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos));
+            task.Start();
+            List<Alimento> lista = await task;
+            
+            return lista;
 
+        }
         private void MostrarMensajeConexionBD(string mensaje)
         {
             MessageBox.Show(mensaje);
@@ -132,6 +142,7 @@ namespace WinFormLogin
                 hiloMensajeConexionBD.Start();
                 login.permisoConexionDB = true;
             }
+
             string rutaRegistroUsuarios = ubicacionArchivo + @"\registroActividad.json";
 
             if (File.Exists(rutaRegistroUsuarios))

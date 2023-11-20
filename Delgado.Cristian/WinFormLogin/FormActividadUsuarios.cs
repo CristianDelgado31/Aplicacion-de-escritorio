@@ -14,7 +14,7 @@ using Usuarios;
 
 namespace WinFormLogin
 {
-    public partial class FormActividadUsuarios : Form
+    public partial class FormActividadUsuarios : Form, IPanelNavbar
     {
         public List<USuarioLog> listaRegistroUsuarios;
         public List<USuarioLog> listaActualizada;
@@ -30,9 +30,9 @@ namespace WinFormLogin
             InitializeComponent();
             dragging = false;
             startPoint = new Point(0, 0);
-            panelNavbar.MouseDown += PanelNavBar_MouseDown;
-            panelNavbar.MouseUp += PanelNavBar_MouseUp;
-            panelNavbar.MouseMove += PanelNavBar_MouseMove;
+            panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
         }
         public FormActividadUsuarios(List<USuarioLog> ListaUsuariosLog, USuarioLog usuarioLog, FormMenuPrincipal formMenuPrincipal) : this()
         {
@@ -40,16 +40,16 @@ namespace WinFormLogin
             this.usuarioLog = usuarioLog;
             this.formMenuPrincipal = formMenuPrincipal;
         }
-        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             startPoint = new Point(e.X, e.Y);
         }
-        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
         }
-        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
@@ -105,9 +105,10 @@ namespace WinFormLogin
 
                 foreach (USuarioLog item in listaActualizada)
                 {
-                    if (item.Hora != usuarioLog.Hora)
+                    if (item.Hora != usuarioLog.Hora && formMenuPrincipal.usuarioNoNuevo == false)
                     {
                         listaActualizada.Add(usuarioLog);
+                        formMenuPrincipal.usuarioNoNuevo = true;
                         break;
                     }
 

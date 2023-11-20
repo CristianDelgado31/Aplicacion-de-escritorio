@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace WinFormLogin
 {
-    public partial class FormOrdenarAlimentos : Form
+    public partial class FormOrdenarAlimentos : Form, IPanelNavbar
     {
         public string claveOrden;
         public string ordenamiento;
@@ -22,20 +22,20 @@ namespace WinFormLogin
             InitializeComponent();
             dragging = false;
             startPoint = new Point(0, 0);
-            panelNavbar.MouseDown += PanelNavBar_MouseDown;
-            panelNavbar.MouseUp += PanelNavBar_MouseUp;
-            panelNavbar.MouseMove += PanelNavBar_MouseMove;
+            panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
         }
-        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             startPoint = new Point(e.X, e.Y);
         }
-        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
         }
-        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {

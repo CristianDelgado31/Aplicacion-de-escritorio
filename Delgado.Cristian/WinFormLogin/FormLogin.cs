@@ -12,10 +12,10 @@ using Usuarios;
 
 namespace WinFormLogin
 {
-    public partial class FormLogin : Form
+    public partial class FormLogin : Form, IPanelNavbar
     {
         public delegate void NotificarDatosIngresados(string mensaje);
-        public event NotificarDatosIngresados MostrarNotificacion; 
+        public event NotificarDatosIngresados MostrarNotificacion;
 
         private bool dragging;
         private Point startPoint;
@@ -30,33 +30,10 @@ namespace WinFormLogin
             usuarios = Usuario.DeserializarUsuarios();
             dragging = false;
             startPoint = new Point(0, 0);
-            panelNavbar.MouseDown += PanelNavBar_MouseDown;
-            panelNavbar.MouseUp += PanelNavBar_MouseUp;
-            panelNavbar.MouseMove += PanelNavBar_MouseMove;
-        }
-        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            dragging = true;
-            startPoint = new Point(e.X, e.Y);
-        }
-        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
-        {
-            dragging = false;
-        }
-        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (dragging)
-            {
-                Point p1 = new Point(e.X, e.Y);
-                Point p2 = PointToScreen(p1);
-                Point p3 = new Point(p2.X - startPoint.X, p2.Y - startPoint.Y);
-                Location = p3;
-            }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
+            btnSalir.Click += SalirDelaAplicacion;
         }
 
         private void btnIniciarSesion_Click_1(object sender, EventArgs e)
@@ -87,6 +64,31 @@ namespace WinFormLogin
         {
             MessageBox.Show(mensaje);
         }
+        private void SalirDelaAplicacion(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        void IPanelNavbar.PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging = false;
+        }
+
+        void IPanelNavbar.PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p1 = new Point(e.X, e.Y);
+                Point p2 = PointToScreen(p1);
+                Point p3 = new Point(p2.X - startPoint.X, p2.Y - startPoint.Y);
+                Location = p3;
+            }
+        }
     }
 }

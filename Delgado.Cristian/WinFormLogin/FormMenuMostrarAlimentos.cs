@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace WinFormLogin
 {
-    public partial class FormMenuMostrarAlimentos : Form
+    public partial class FormMenuMostrarAlimentos : Form, IPanelNavbar
     {
-        private FormMenuPrincipal principal;
+        private FormMenuPrincipal menuPrincipal;
         private ColeccionGenerica<Alimento> coleccionGenerica;
         List<Fruta> listFrutas;
         List<Verdura> listaVerduras;
@@ -38,27 +38,27 @@ namespace WinFormLogin
             InitializeComponent();
             dragging = false;
             startPoint = new Point(0, 0);
-            panelNavbar.MouseDown += PanelNavBar_MouseDown;
-            panelNavbar.MouseUp += PanelNavBar_MouseUp;
-            panelNavbar.MouseMove += PanelNavBar_MouseMove;
+            panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
+            panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
+            panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
 
         }
         public FormMenuMostrarAlimentos(FormMenuPrincipal principal, ColeccionGenerica<Alimento> coleccionGenerica, BaseDeDatosAlimentos conexionBD) : this()
         {
-            this.principal = principal;
+            this.menuPrincipal = principal;
             this.coleccionGenerica = coleccionGenerica;
             this.conexionBD = conexionBD;
         }
-        private void PanelNavBar_MouseDown(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
         {
             dragging = true;
             startPoint = new Point(e.X, e.Y);
         }
-        private void PanelNavBar_MouseUp(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
         }
-        private void PanelNavBar_MouseMove(object sender, MouseEventArgs e)
+        void IPanelNavbar.PanelNavBar_MouseMove(object sender, MouseEventArgs e)
         {
             if (dragging)
             {
@@ -71,12 +71,12 @@ namespace WinFormLogin
 
         private void FormMostrarAlimentos_Load(object sender, EventArgs e)
         {
-            ActualizarListaGenerica();
+            ActualizarListaGenerica();            
         }
 
         private void FormMostrarAlimentos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            principal.Show();
+            menuPrincipal.Show();
         }
 
         private void btnFrutas_Click(object sender, EventArgs e)
@@ -109,7 +109,6 @@ namespace WinFormLogin
             botonCarnes = true;
         }
 
-
         private void AjustarColumnas()
         {
             dtvListaAlimentos.AutoResizeColumnHeadersHeight();
@@ -140,41 +139,48 @@ namespace WinFormLogin
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (alimentoSeleccionado is not null)
-            {
-                FormAgregarOModificarAlimentos frmModificar = new FormAgregarOModificarAlimentos(alimentoSeleccionado, true);
-                frmModificar.ShowDialog();
-                if (frmModificar.DialogResult == DialogResult.OK)
+            if(menuPrincipal.usuario.perfil != "vendedor")
+            { 
+                if (alimentoSeleccionado is not null)
                 {
-                    if (frmModificar.alimentoNuevo is Fruta fruta)
+                    FormAgregarOModificarAlimentos frmModificar = new FormAgregarOModificarAlimentos(alimentoSeleccionado, true);
+                    frmModificar.ShowDialog();
+                    if (frmModificar.DialogResult == DialogResult.OK)
                     {
-                        conexionBD.ModificarAlimento(fruta, null, null);
-                    }
-                    else if (frmModificar.alimentoNuevo is Verdura verdura)
-                    {
-                        conexionBD.ModificarAlimento(null, verdura, null);
-                    }
-                    else if (frmModificar.alimentoNuevo is Carne carne)
-                    {
-                        conexionBD.ModificarAlimento(null, null, carne);
-                    }
+                        if (frmModificar.alimentoNuevo is Fruta fruta)
+                        {
+                            conexionBD.ModificarAlimento(fruta, null, null);
+                        }
+                        else if (frmModificar.alimentoNuevo is Verdura verdura)
+                        {
+                            conexionBD.ModificarAlimento(null, verdura, null);
+                        }
+                        else if (frmModificar.alimentoNuevo is Carne carne)
+                        {
+                            conexionBD.ModificarAlimento(null, null, carne);
+                        }
 
-                    coleccionGenerica.listaAlimentos.Clear();
-                    coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
-                    ActualizarListaGenerica();
-                    dtvListaAlimentos.Visible = false;
-                    MessageBox.Show("Un elemento ha sido modificado!");
+                        coleccionGenerica.listaAlimentos.Clear();
+                        coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
+                        ActualizarListaGenerica();
+                        dtvListaAlimentos.Visible = false;
+                        MessageBox.Show("Un elemento ha sido modificado!");
+                    }
+                    else
+                    {
+                        alimentoSeleccionado = null;
+                    }
                 }
                 else
                 {
-                    alimentoSeleccionado = null;
+                    MessageBox.Show("Seleccione un alimento para modificar");
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione un alimento para modificar");
+                MessageBox.Show("Su perfil no tiene permitido modificar registros");
+                btnModificar.Enabled = false;
             }
-
         }
 
         private void ActualizarListaGenerica()
@@ -205,27 +211,36 @@ namespace WinFormLogin
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (alimentoSeleccionado is not null)
+            if(menuPrincipal.usuario.perfil == "administrador")
             {
-                DialogResult dialogResult = MessageBox.Show("¿Desea eliminar este elemento?", "Ventana eliminar", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (alimentoSeleccionado is not null)
                 {
-                    conexionBD.EliminarRegistroAlimento(alimentoSeleccionado);
-                    coleccionGenerica.listaAlimentos.Clear();
-                    coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
-                    ActualizarListaGenerica();
-                    dtvListaAlimentos.Visible = false;
-                    MessageBox.Show("Se elimino el elemento exitosamente!");
+                    DialogResult dialogResult = MessageBox.Show($"¿Desea eliminar el registro alimento:\n Nombre: {alimentoSeleccionado.Nombre} - Codigo: {alimentoSeleccionado.Codigo} - " +
+                        $"Empresa: {alimentoSeleccionado.Empresa}?", "Ventana eliminar", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        conexionBD.EliminarRegistroAlimento(alimentoSeleccionado);
+                        coleccionGenerica.listaAlimentos.Clear();
+                        coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
+                        ActualizarListaGenerica();
+                        dtvListaAlimentos.Visible = false;
+                        MessageBox.Show("Se elimino el elemento exitosamente!");
+                    }
+                    else
+                    {
+                        alimentoSeleccionado = null;
+                    }
+
                 }
                 else
                 {
-                    alimentoSeleccionado = null;
+                    MessageBox.Show("Seleccione un elemento para eliminar");
                 }
-
             }
             else
             {
-                MessageBox.Show("Seleccione un elemento para eliminar");
+                MessageBox.Show("Su perfil no tiene permitido eliminar registros");
+                btnEliminar.Enabled = false;
             }
         }
 
@@ -262,7 +277,7 @@ namespace WinFormLogin
 
         private void btnGenerico_Click(object sender, EventArgs e)
         {
-            formlistaGenerica = new FormMostrarListaGenerica(this, coleccionGenerica);
+            formlistaGenerica = new FormMostrarListaGenerica(coleccionGenerica);
             formlistaGenerica.ShowDialog();
         }
 
