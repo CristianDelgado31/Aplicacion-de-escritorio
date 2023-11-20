@@ -18,8 +18,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseDeDatos", "BaseDeDatos\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test Unitario", "Test Unitario\Test Unitario.csproj", "{3D126D33-5CF2-4DE1-A491-04BAEB8F9408}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolaPruebas", "ConsolaPruebas\ConsolaPruebas.csproj", "{C20007AB-B780-4F5E-9A15-B6C818313D84}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,10 +44,6 @@ Global
 		{3D126D33-5CF2-4DE1-A491-04BAEB8F9408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D126D33-5CF2-4DE1-A491-04BAEB8F9408}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D126D33-5CF2-4DE1-A491-04BAEB8F9408}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C20007AB-B780-4F5E-9A15-B6C818313D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C20007AB-B780-4F5E-9A15-B6C818313D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C20007AB-B780-4F5E-9A15-B6C818313D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C20007AB-B780-4F5E-9A15-B6C818313D84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
