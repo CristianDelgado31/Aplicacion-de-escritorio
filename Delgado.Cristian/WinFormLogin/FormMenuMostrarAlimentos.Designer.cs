@@ -185,7 +185,7 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // FormMostrarAlimentos
+            // FormMenuMostrarAlimentos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -202,7 +202,7 @@
             Controls.Add(btnVerduras);
             Controls.Add(dtvListaAlimentos);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormMostrarAlimentos";
+            Name = "FormMenuMostrarAlimentos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormMostrarAlimentos";
             FormClosing += FormMostrarAlimentos_FormClosing;

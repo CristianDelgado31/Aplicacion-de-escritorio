@@ -125,7 +125,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.IndianRed;
-            btnSalir.Location = new Point(473, 3);
+            btnSalir.Location = new Point(477, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(57, 44);
             btnSalir.TabIndex = 0;
@@ -133,7 +133,7 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // FormMostrarRegistroActividad
+            // FormActividadUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -145,7 +145,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(btnGuardar);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormMostrarRegistroActividad";
+            Name = "FormActividadUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPrueba";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

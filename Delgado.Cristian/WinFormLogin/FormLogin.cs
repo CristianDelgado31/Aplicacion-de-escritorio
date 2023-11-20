@@ -14,13 +14,18 @@ namespace WinFormLogin
 {
     public partial class FormLogin : Form
     {
+        public delegate void NotificarDatosIngresados(string mensaje);
+        public event NotificarDatosIngresados MostrarNotificacion; 
+
         private bool dragging;
         private Point startPoint;
         private List<Usuario>? usuarios;
         private FormMenuPrincipal formPrincipal;
-        
+        public bool permisoConexionDB;
+
         public FormLogin()
         {
+            permisoConexionDB = false;
             InitializeComponent();
             usuarios = Usuario.DeserializarUsuarios();
             dragging = false;
@@ -70,10 +75,17 @@ namespace WinFormLogin
             }
             if (validar == false)
             {
-                MessageBox.Show("Usuario y/o contraseña invalido/s");
+                MostrarNotificacion += MensajeDatosInvalidos;
+                MostrarNotificacion.Invoke("Usuario y/o contraseña invalido/s");
+                MostrarNotificacion -= MensajeDatosInvalidos;
             }
             txtCorreo.Clear();
             txtContrasenia.Clear();
+        }
+
+        private void MensajeDatosInvalidos(string mensaje)
+        {
+            MessageBox.Show(mensaje);
         }
 
     }

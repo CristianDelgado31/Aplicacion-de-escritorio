@@ -182,7 +182,7 @@ namespace WinFormLogin
             listaCarnes.Clear();
             listFrutas.Clear();
             listaVerduras.Clear();
-            foreach (var item in coleccionGenerica.listaAlimentos)
+            foreach (Alimento item in coleccionGenerica.listaAlimentos)
             {
                 if (item is Fruta fruta)
                 {

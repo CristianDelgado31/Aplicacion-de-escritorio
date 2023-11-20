@@ -528,7 +528,7 @@
             panelNavbar.Controls.Add(button1);
             panelNavbar.Location = new Point(-3, -1);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(765, 52);
+            panelNavbar.Size = new Size(765, 50);
             panelNavbar.TabIndex = 15;
             // 
             // label3

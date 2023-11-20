@@ -37,9 +37,9 @@
             txtCorreo = new TextBox();
             lblContrasenia = new Label();
             lblCorreo = new Label();
-            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
             panelNavbar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panelNavbar
@@ -70,7 +70,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.IndianRed;
-            btnSalir.Location = new Point(783, 3);
+            btnSalir.Location = new Point(786, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(57, 46);
             btnSalir.TabIndex = 0;
@@ -139,15 +139,15 @@
             lblCorreo.TabIndex = 12;
             lblCorreo.Text = "USUARIO";
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(78, 83);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(693, 351);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 17;
-            pictureBox1.TabStop = false;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(74, 75);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(704, 370);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 18;
+            pictureBox2.TabStop = false;
             // 
             // FormLogin
             // 
@@ -161,18 +161,18 @@
             Controls.Add(lblContrasenia);
             Controls.Add(lblCorreo);
             Controls.Add(panelNavbar);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBox2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormLoginNuevo";
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
-            TransparentLocation(lblCorreo, pictureBox1 );
-            TransparentLocation(lblContrasenia, pictureBox1 );
+            TransparentLocation(lblCorreo, pictureBox2);
+            TransparentLocation(lblContrasenia, pictureBox2);
         }
 
         private void TransparentLocation(Label label, PictureBox pictureBox)
@@ -190,6 +190,6 @@
         private TextBox txtCorreo;
         private Label lblContrasenia;
         private Label lblCorreo;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

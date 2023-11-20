@@ -24,6 +24,9 @@ namespace WinFormLogin
         private bool dragging;
         private Point startPoint;
 
+        private delegate void NotificarDatoErroneo(ExcepcionDatos excepcion);
+        private event NotificarDatoErroneo campoInvalido;
+
         public FormAgregarOModificarAlimentos()
         {
             conexionBD = new BaseDeDatosAlimentos();
@@ -124,10 +127,13 @@ namespace WinFormLogin
                     if (rbtnSiCitrico.Checked == false && rbtnNoCitrico.Checked == false && rbtnSiComestible.Checked == false && rbtnNoComestible.Checked == false)
                         throw new ExcepcionDatos("Complete los campos restantes de fruta", "botones no fueron seleccionados");
 
-                    if (rbtnSiCitrico.Checked == true || rbtnNoCitrico.Checked == true && rbtnSiComestible.Checked == false && rbtnNoComestible.Checked == false)
+                    if (rbtnSiComestible.Checked == false && rbtnNoComestible.Checked == false)
+                    {
                         throw new ExcepcionDatos("Seleccione una opción de Cascara comestible", "");
 
-                    if (rbtnSiComestible.Checked == true || rbtnNoComestible.Checked == true && rbtnSiCitrico.Checked == false && rbtnNoCitrico.Checked == false)
+                    }
+
+                    if (rbtnSiCitrico.Checked == false && rbtnNoCitrico.Checked == false)
                         throw new ExcepcionDatos("Seleccione una opción de Cítrico", "");
 
 
@@ -146,10 +152,10 @@ namespace WinFormLogin
                     if (rbtnSiCocina.Checked == false && rbtnNoCocina.Checked == false && rbtnSiHoja.Checked == false && rbtnNoHoja.Checked == false)
                         throw new ExcepcionDatos("Complete los campos restantes de verdura", "botones no fueron seleccionados");
 
-                    if (rbtnSiCocina.Checked == true || rbtnNoCocina.Checked == true && rbtnSiHoja.Checked == false && rbtnNoHoja.Checked == false)
+                    if (rbtnSiHoja.Checked == false && rbtnNoHoja.Checked == false)
                         throw new ExcepcionDatos("Seleccione una opción de si es una hoja", "");
 
-                    if (rbtnSiHoja.Checked == true || rbtnNoHoja.Checked == true && rbtnSiCocina.Checked == false && rbtnNoCocina.Checked == false)
+                    if (rbtnSiCocina.Checked == false && rbtnNoCocina.Checked == false)
                         throw new ExcepcionDatos("Seleccione una opción de si se cocina", "");
 
                     if (rbtnSiCocina.Checked)
@@ -194,9 +200,16 @@ namespace WinFormLogin
             }
             catch (ExcepcionDatos ex)
             {
-                MessageBox.Show(ex.Message + $"\nDato: {ex.DatoIngresado}");
+                campoInvalido += MostrarCampoErroneo;
+                campoInvalido.Invoke(ex);
+                campoInvalido -= MostrarCampoErroneo;
+                //MessageBox.Show(ex.Message + $"\nDato: {ex.DatoIngresado}");
             }
 
+        }
+        private void MostrarCampoErroneo(ExcepcionDatos ex)
+        {
+            MessageBox.Show(ex.Message + $"\nDato: {ex.DatoIngresado}");
         }
         private bool VerificarDatoIngresado(string datoAVerificar)
         {

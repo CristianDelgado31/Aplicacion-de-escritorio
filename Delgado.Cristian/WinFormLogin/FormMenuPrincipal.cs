@@ -27,6 +27,10 @@ namespace WinFormLogin
         private BaseDeDatosAlimentos conexionBD;
         private bool dragging;
         private Point startPoint;
+        //private bool permisoConexionDB;
+
+        private delegate void NotificarConexionBaseDeDatos(string mensaje);
+        private event NotificarConexionBaseDeDatos mensajeConexionBD;
 
 
         public FormMenuPrincipal()
@@ -80,7 +84,10 @@ namespace WinFormLogin
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
+            //Podria agregar un task
+            Task hiloObtenerListaDeLaBaseDeDatos = new Task(ObtenerListaDeLaBaseDeDatos);
+            hiloObtenerListaDeLaBaseDeDatos.Start();
+
             FormAgregarOModificarAlimentos winFormAgregar = new FormAgregarOModificarAlimentos(this, coleccionGenerica);
             this.Hide();
             winFormAgregar.ShowDialog();
@@ -90,18 +97,41 @@ namespace WinFormLogin
         {
             coleccionGenerica.listaAlimentos.Clear();
             coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
+
             FormMenuMostrarAlimentos formMostrar = new FormMenuMostrarAlimentos(this, coleccionGenerica, conexionBD);
             this.Hide();
             formMostrar.Show();
         }
-
-        private void WinFormPrincipal_Load(object sender, EventArgs e)
+        private void ObtenerListaDeLaBaseDeDatos()
         {
+            coleccionGenerica.listaAlimentos = conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos);
+        }
+
+        private void MostrarMensajeConexionBD(string mensaje)
+        {
+            MessageBox.Show(mensaje);
+        }
+
+        private void MetodoAsincronoMensajeConexionBD()
+        {
+            Thread.Sleep(50);
             if (conexionBD.PruebaConexion())
-                MessageBox.Show("Conexion exitosa con la base de datos!");
+            {
+                mensajeConexionBD += MostrarMensajeConexionBD;
+                mensajeConexionBD.Invoke("Conexion exitosa con la base de datos!");
+                mensajeConexionBD -= MostrarMensajeConexionBD;
+            }
             else
                 MessageBox.Show(conexionBD.mensajeError.ToString());
-
+        }
+        private void WinFormPrincipal_Load(object sender, EventArgs e)
+        {
+            if(login.permisoConexionDB == false)
+            { 
+                Task hiloMensajeConexionBD = new Task(MetodoAsincronoMensajeConexionBD);
+                hiloMensajeConexionBD.Start();
+                login.permisoConexionDB = true;
+            }
             string rutaRegistroUsuarios = ubicacionArchivo + @"\registroActividad.json";
 
             if (File.Exists(rutaRegistroUsuarios))

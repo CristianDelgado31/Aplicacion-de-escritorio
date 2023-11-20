@@ -131,7 +131,7 @@
             panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(-2, 1);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(868, 49);
+            panelNavbar.Size = new Size(868, 50);
             panelNavbar.TabIndex = 12;
             // 
             // label3
@@ -152,7 +152,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.IndianRed;
-            btnSalir.Location = new Point(808, 3);
+            btnSalir.Location = new Point(811, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(57, 46);
             btnSalir.TabIndex = 0;
