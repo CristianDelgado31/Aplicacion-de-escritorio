@@ -4,8 +4,9 @@ Sobre mi: Hola me llamo Cristian Delgado soy alumno de la UTN avellaneda estudia
 
 Resumen: El funcionamiento de la aplicación es guardar, eliminar, modificar y poder leer los registros agregados por medio de una tabla.
 de diferente tipo con el objetivo de facilitar el trabajo de las personas que registran datos. La tematica del CRUD se compone de un proyecto 
-entidad basado en clases de alimentos, una coleccion generica, excepciones , interfaces y serializacion/deserialización con archivos JSON. El CRUD
-tambien se conecta con una base de datos donde se le realiza consultas especificas.
+entidad basado en clases de alimentos, los cuales se utilizaran en los forms y con ayuda de la base de datos, se le realizaran consultas especificas.
+
+En este trabajo en general se utlizaron colecciones genericas, excepciones, interfaces, eventos, serializacion/deserialización con archivos JSON, etc. 
 
 Diagrama de Entidades: 
 ![Diagrama Biblioteca de clases](https://gyazo.com/4472bd2d3980b5333c9d9485f346c3b4.png)
