@@ -168,7 +168,7 @@ namespace WinFormLogin
         {
             serializarAutomatico = true;
             frmMostrarRegistroActividad = new FormRegistroActividadUsuarios(listUsuariosLog, usuarioLog, this);
-            this.Hide();
+            
             if (frmMostrarRegistroActividad.ShowDialog() == DialogResult.OK)
             {
 

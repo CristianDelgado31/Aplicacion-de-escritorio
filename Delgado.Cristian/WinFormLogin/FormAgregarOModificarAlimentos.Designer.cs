@@ -69,7 +69,7 @@
             btnCancelar = new Button();
             panelNavbar = new Panel();
             label3 = new Label();
-            button1 = new Button();
+            btnSalir = new Button();
             groupbox.SuspendLayout();
             gbFormulario.SuspendLayout();
             gbCarne.SuspendLayout();
@@ -525,7 +525,7 @@
             // 
             panelNavbar.BackColor = Color.Black;
             panelNavbar.Controls.Add(label3);
-            panelNavbar.Controls.Add(button1);
+            panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(-3, -1);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(765, 50);
@@ -542,20 +542,20 @@
             label3.TabIndex = 1;
             label3.Text = "FORM AGREGAR/MODIFICAR";
             // 
-            // button1
+            // btnSalir
             // 
-            button1.BackColor = Color.Black;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.IndianRed;
-            button1.Location = new Point(712, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(53, 52);
-            button1.TabIndex = 0;
-            button1.Text = "X";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnSalir.BackColor = Color.Black;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalir.ForeColor = Color.IndianRed;
+            btnSalir.Location = new Point(712, 0);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(53, 52);
+            btnSalir.TabIndex = 0;
+            btnSalir.Text = "X";
+            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // FormAgregarOModificarAlimentos
             // 
@@ -640,6 +640,6 @@
         private Button btnCancelar;
         private Panel panelNavbar;
         private Label label3;
-        private Button button1;
+        private Button btnSalir;
     }
 }
