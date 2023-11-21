@@ -82,6 +82,7 @@
             // rbtnNombre
             // 
             rbtnNombre.AutoSize = true;
+            rbtnNombre.BackColor = Color.Peru;
             rbtnNombre.ForeColor = SystemColors.HighlightText;
             rbtnNombre.Location = new Point(85, 139);
             rbtnNombre.Name = "rbtnNombre";
@@ -89,11 +90,12 @@
             rbtnNombre.TabIndex = 3;
             rbtnNombre.TabStop = true;
             rbtnNombre.Text = "Nombre";
-            rbtnNombre.UseVisualStyleBackColor = true;
+            rbtnNombre.UseVisualStyleBackColor = false;
             // 
             // rbtnUnidad
             // 
             rbtnUnidad.AutoSize = true;
+            rbtnUnidad.BackColor = Color.Peru;
             rbtnUnidad.ForeColor = SystemColors.HighlightText;
             rbtnUnidad.Location = new Point(85, 180);
             rbtnUnidad.Name = "rbtnUnidad";
@@ -101,7 +103,7 @@
             rbtnUnidad.TabIndex = 4;
             rbtnUnidad.TabStop = true;
             rbtnUnidad.Text = "Unidad";
-            rbtnUnidad.UseVisualStyleBackColor = true;
+            rbtnUnidad.UseVisualStyleBackColor = false;
             // 
             // gbOrdenamiento
             // 

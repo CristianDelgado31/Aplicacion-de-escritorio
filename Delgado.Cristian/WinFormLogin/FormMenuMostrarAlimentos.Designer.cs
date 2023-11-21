@@ -39,17 +39,17 @@
             label1 = new Label();
             btnGenerico = new Button();
             panelNavbar = new Panel();
+            btnMax = new Button();
+            btnMin = new Button();
             label3 = new Label();
             btnSalir = new Button();
-            btnMin = new Button();
-            btnMax = new Button();
             ((System.ComponentModel.ISupportInitialize)dtvListaAlimentos).BeginInit();
             panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
             // dtvListaAlimentos
             // 
-            dtvListaAlimentos.BackgroundColor = Color.Peru;
+            dtvListaAlimentos.BackgroundColor = Color.White;
             dtvListaAlimentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtvListaAlimentos.Location = new Point(205, 68);
             dtvListaAlimentos.Name = "dtvListaAlimentos";
@@ -164,6 +164,32 @@
             panelNavbar.Size = new Size(887, 52);
             panelNavbar.TabIndex = 16;
             // 
+            // btnMax
+            // 
+            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMax.BackColor = Color.Black;
+            btnMax.FlatStyle = FlatStyle.Flat;
+            btnMax.ForeColor = Color.Black;
+            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
+            btnMax.Location = new Point(776, 4);
+            btnMax.Name = "btnMax";
+            btnMax.Size = new Size(47, 46);
+            btnMax.TabIndex = 22;
+            btnMax.UseVisualStyleBackColor = false;
+            // 
+            // btnMin
+            // 
+            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMin.BackColor = Color.Black;
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
+            btnMin.Location = new Point(724, 4);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(46, 46);
+            btnMin.TabIndex = 21;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -189,32 +215,6 @@
             btnSalir.Text = "X";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
-            // 
-            // btnMin
-            // 
-            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMin.BackColor = Color.Black;
-            btnMin.FlatStyle = FlatStyle.Flat;
-            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
-            btnMin.Location = new Point(724, 4);
-            btnMin.Name = "btnMin";
-            btnMin.Size = new Size(46, 46);
-            btnMin.TabIndex = 21;
-            btnMin.UseVisualStyleBackColor = false;
-            btnMin.Click += btnMin_Click;
-            // 
-            // btnMax
-            // 
-            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMax.BackColor = Color.Black;
-            btnMax.FlatStyle = FlatStyle.Flat;
-            btnMax.ForeColor = Color.Black;
-            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
-            btnMax.Location = new Point(776, 4);
-            btnMax.Name = "btnMax";
-            btnMax.Size = new Size(47, 46);
-            btnMax.TabIndex = 22;
-            btnMax.UseVisualStyleBackColor = false;
             // 
             // FormMenuMostrarAlimentos
             // 
