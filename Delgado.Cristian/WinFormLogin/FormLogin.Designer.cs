@@ -201,6 +201,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
+            TransparentLocation(lblCorreo, pictureBox2 );
+            TransparentLocation(lblContrasenia, pictureBox2 );
         }
 
         private void TransparentLocation(Label label, PictureBox pictureBox)
