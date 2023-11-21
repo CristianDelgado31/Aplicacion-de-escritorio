@@ -133,7 +133,7 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // FormActividadUsuarios
+            // FormRegistroActividadUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -145,7 +145,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(btnGuardar);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FormActividadUsuarios";
+            Name = "FormRegistroActividadUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPrueba";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
