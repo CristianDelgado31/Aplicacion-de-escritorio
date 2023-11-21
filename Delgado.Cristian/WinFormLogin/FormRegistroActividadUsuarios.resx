@@ -123,4 +123,23 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>170, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnMin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAALlJREFUSEvt
+        lTsKwlAQRbOCLFOXYGspaGHsLPzgnqxcgoWIKFjFc/F2Y56MpbwDBzKZ3BlI8V5TSdH3fYtbPGMWZTbY
+        elyE5gHvOMdJ0gU+cOdxEZpXXLpMQ7bDi8sITTF1mUZZDXAZURPqgrpgGGU1wGVETfijBTyPcfbFkT//
+        acHp/arI0Z/nF2RRVgNcRujpsOtcpiG7wuJhp+P6iWv89L9LKqNs8bjWhbPHG2ZRRpfV8IVTiTTNCzYW
+        JfVIkGgGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnMax.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAANhJREFUSEvt
+        lTEKwkAQRXOCnMJjKdrkDHZip4WFKQQFMeD1LERE0ULj+zAbxMGQBQWFPHjFz8xoscls0hJFWZYpFrjD
+        wB271lLBs57VAppZY2otHopbPOEMh092rKVCz156NHPGwlo8FA84txgNsznuLXooirHFaDSrH7DoURG+
+        +gc6tJHFaDSLN4seigN0B9oUzWLfYssvwgFlHzjkzKKH4tdfU/HfX7KWXW4xGmYXWLvstK6vuMSpOcF3
+        61q10LdCzdau63DhHDFwwSYXjmY2+P7CafEkyQObg1vu2xuiVAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

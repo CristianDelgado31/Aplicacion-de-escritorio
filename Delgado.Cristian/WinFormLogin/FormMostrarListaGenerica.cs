@@ -62,5 +62,13 @@ namespace WinFormLogin
         {
             this.Close();
         }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Minimized;
+            else if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Minimized;
+        }
     }
 }

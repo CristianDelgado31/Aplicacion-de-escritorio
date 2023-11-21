@@ -168,7 +168,7 @@ namespace WinFormLogin
         {
             serializarAutomatico = true;
             frmMostrarRegistroActividad = new FormRegistroActividadUsuarios(listUsuariosLog, usuarioLog, this);
-            
+
             if (frmMostrarRegistroActividad.ShowDialog() == DialogResult.OK)
             {
 
@@ -192,6 +192,14 @@ namespace WinFormLogin
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Minimized;
+            else if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMostrarListaGenerica));
             lstListaGenerica = new ListBox();
             label1 = new Label();
             panelNavbar = new Panel();
             label2 = new Label();
             btnSalir = new Button();
+            btnMin = new Button();
+            btnMax = new Button();
             panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,6 +63,8 @@
             // panelNavbar
             // 
             panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(btnMax);
+            panelNavbar.Controls.Add(btnMin);
             panelNavbar.Controls.Add(label2);
             panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(0, 0);
@@ -93,6 +98,32 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
+            // btnMin
+            // 
+            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMin.BackColor = Color.Black;
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
+            btnMin.Location = new Point(405, 3);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(46, 46);
+            btnMin.TabIndex = 21;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
+            // 
+            // btnMax
+            // 
+            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMax.BackColor = Color.Black;
+            btnMax.FlatStyle = FlatStyle.Flat;
+            btnMax.ForeColor = Color.Black;
+            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
+            btnMax.Location = new Point(457, 3);
+            btnMax.Name = "btnMax";
+            btnMax.Size = new Size(47, 46);
+            btnMax.TabIndex = 22;
+            btnMax.UseVisualStyleBackColor = false;
+            // 
             // FormMostrarListaGenerica
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -120,5 +151,7 @@
         private Panel panelNavbar;
         private Label label2;
         private Button btnSalir;
+        private Button btnMin;
+        private Button btnMax;
     }
 }

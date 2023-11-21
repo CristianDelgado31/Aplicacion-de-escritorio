@@ -71,7 +71,7 @@ namespace WinFormLogin
 
         private void FormMostrarAlimentos_Load(object sender, EventArgs e)
         {
-            ActualizarListaGenerica();            
+            ActualizarListaGenerica();
         }
 
         private void FormMostrarAlimentos_FormClosing(object sender, FormClosingEventArgs e)
@@ -139,8 +139,8 @@ namespace WinFormLogin
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if(menuPrincipal.usuario.perfil != "vendedor")
-            { 
+            if (menuPrincipal.usuario.perfil != "vendedor")
+            {
                 if (alimentoSeleccionado is not null)
                 {
                     FormAgregarOModificarAlimentos frmModificar = new FormAgregarOModificarAlimentos(alimentoSeleccionado, true);
@@ -211,7 +211,7 @@ namespace WinFormLogin
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(menuPrincipal.usuario.perfil == "administrador")
+            if (menuPrincipal.usuario.perfil == "administrador")
             {
                 if (alimentoSeleccionado is not null)
                 {
@@ -284,6 +284,14 @@ namespace WinFormLogin
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Minimized;
+            else if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Minimized;
         }
     }
 }

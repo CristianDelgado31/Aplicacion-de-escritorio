@@ -40,6 +40,8 @@
             panelNavbar = new Panel();
             label3 = new Label();
             btnSalir = new Button();
+            btnMin = new Button();
+            btnMax = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelNavbar.SuspendLayout();
             SuspendLayout();
@@ -127,6 +129,8 @@
             // panelNavbar
             // 
             panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(btnMax);
+            panelNavbar.Controls.Add(btnMin);
             panelNavbar.Controls.Add(label3);
             panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(0, 0);
@@ -159,6 +163,32 @@
             btnSalir.Text = "X";
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
+            // 
+            // btnMin
+            // 
+            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMin.BackColor = Color.Black;
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
+            btnMin.Location = new Point(706, 4);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(46, 46);
+            btnMin.TabIndex = 20;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
+            // 
+            // btnMax
+            // 
+            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMax.BackColor = Color.Black;
+            btnMax.FlatStyle = FlatStyle.Flat;
+            btnMax.ForeColor = Color.Black;
+            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
+            btnMax.Location = new Point(758, 4);
+            btnMax.Name = "btnMax";
+            btnMax.Size = new Size(47, 46);
+            btnMax.TabIndex = 21;
+            btnMax.UseVisualStyleBackColor = false;
             // 
             // FormMenuPrincipal
             // 
@@ -200,5 +230,7 @@
         private Label label3;
         private Button btnSalir;
         private PictureBox pictureBox1;
+        private Button btnMin;
+        private Button btnMax;
     }
 }

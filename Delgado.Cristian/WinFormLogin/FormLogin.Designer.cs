@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             panelNavbar = new Panel();
+            btnMax = new Button();
+            btnMin = new Button();
             label3 = new Label();
             btnSalir = new Button();
             btnIniciarSesion = new Button();
@@ -45,12 +47,40 @@
             // panelNavbar
             // 
             panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(btnMax);
+            panelNavbar.Controls.Add(btnMin);
             panelNavbar.Controls.Add(label3);
             panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(-1, -2);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(843, 49);
+            panelNavbar.Size = new Size(846, 49);
             panelNavbar.TabIndex = 11;
+            // 
+            // btnMax
+            // 
+            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMax.BackColor = Color.Black;
+            btnMax.FlatStyle = FlatStyle.Flat;
+            btnMax.ForeColor = Color.Black;
+            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
+            btnMax.Location = new Point(736, 4);
+            btnMax.Name = "btnMax";
+            btnMax.Size = new Size(47, 46);
+            btnMax.TabIndex = 19;
+            btnMax.UseVisualStyleBackColor = false;
+            // 
+            // btnMin
+            // 
+            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMin.BackColor = Color.Black;
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
+            btnMin.Location = new Point(684, 4);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(46, 46);
+            btnMin.TabIndex = 19;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
             // 
             // label3
             // 
@@ -65,12 +95,13 @@
             // 
             // btnSalir
             // 
+            btnSalir.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSalir.BackColor = Color.Black;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.IndianRed;
-            btnSalir.Location = new Point(786, 3);
+            btnSalir.Location = new Point(786, 4);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(57, 46);
             btnSalir.TabIndex = 0;
@@ -170,8 +201,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
-            TransparentLocation(lblCorreo, pictureBox2);
-            TransparentLocation(lblContrasenia, pictureBox2);
         }
 
         private void TransparentLocation(Label label, PictureBox pictureBox)
@@ -190,5 +219,7 @@
         private Label lblContrasenia;
         private Label lblCorreo;
         private PictureBox pictureBox2;
+        private Button btnMin;
+        private Button btnMax;
     }
 }

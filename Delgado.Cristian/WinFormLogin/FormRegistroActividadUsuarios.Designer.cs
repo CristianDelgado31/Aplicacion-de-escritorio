@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistroActividadUsuarios));
             btnGuardar = new Button();
             sfdGuardarArchivo = new SaveFileDialog();
             dataGridView1 = new DataGridView();
@@ -35,6 +36,8 @@
             btnAbrirArchivo = new Button();
             label1 = new Label();
             panelNavbar = new Panel();
+            btnMin = new Button();
+            btnMax = new Button();
             label2 = new Label();
             btnSalir = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -88,24 +91,52 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(66, 66, 66);
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.BackColor = Color.Peru;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.HighlightText;
-            label1.Location = new Point(190, 60);
+            label1.Location = new Point(182, 60);
             label1.Name = "label1";
-            label1.Size = new Size(184, 21);
+            label1.Size = new Size(222, 25);
             label1.TabIndex = 7;
             label1.Text = "Lista registro de usuarios";
             // 
             // panelNavbar
             // 
             panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(btnMin);
+            panelNavbar.Controls.Add(btnMax);
             panelNavbar.Controls.Add(label2);
             panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(0, -3);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(534, 47);
             panelNavbar.TabIndex = 15;
+            // 
+            // btnMin
+            // 
+            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMin.BackColor = Color.Transparent;
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
+            btnMin.Location = new Point(372, 3);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(46, 44);
+            btnMin.TabIndex = 16;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
+            // 
+            // btnMax
+            // 
+            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMax.BackColor = Color.Black;
+            btnMax.FlatStyle = FlatStyle.Flat;
+            btnMax.ForeColor = Color.Black;
+            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
+            btnMax.Location = new Point(424, 3);
+            btnMax.Name = "btnMax";
+            btnMax.Size = new Size(47, 44);
+            btnMax.TabIndex = 16;
+            btnMax.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -114,9 +145,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(3, 12);
             label2.Name = "label2";
-            label2.Size = new Size(163, 23);
+            label2.Size = new Size(245, 23);
             label2.TabIndex = 1;
-            label2.Text = "HISTORIAL USUARIOS";
+            label2.Text = "HISTORIAL ACTIVIDAD USUARIOS";
             // 
             // btnSalir
             // 
@@ -165,5 +196,7 @@
         private Panel panelNavbar;
         private Label label2;
         private Button btnSalir;
+        private Button btnMax;
+        private Button btnMin;
     }
 }

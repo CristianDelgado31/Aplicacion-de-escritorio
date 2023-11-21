@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOrdenarAlimentos));
             label1 = new Label();
             btnAscendente = new Button();
             btnDescendente = new Button();
@@ -35,6 +36,8 @@
             rbtnUnidad = new RadioButton();
             gbOrdenamiento = new GroupBox();
             panelNavbar = new Panel();
+            btnMax = new Button();
+            btnMin = new Button();
             label2 = new Label();
             btnSalir = new Button();
             gbOrdenamiento.SuspendLayout();
@@ -46,7 +49,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.HighlightText;
-            label1.Location = new Point(64, 75);
+            label1.Location = new Point(88, 77);
             label1.Name = "label1";
             label1.Size = new Size(216, 21);
             label1.TabIndex = 0;
@@ -80,7 +83,7 @@
             // 
             rbtnNombre.AutoSize = true;
             rbtnNombre.ForeColor = SystemColors.HighlightText;
-            rbtnNombre.Location = new Point(61, 137);
+            rbtnNombre.Location = new Point(85, 139);
             rbtnNombre.Name = "rbtnNombre";
             rbtnNombre.Size = new Size(69, 19);
             rbtnNombre.TabIndex = 3;
@@ -92,7 +95,7 @@
             // 
             rbtnUnidad.AutoSize = true;
             rbtnUnidad.ForeColor = SystemColors.HighlightText;
-            rbtnUnidad.Location = new Point(61, 178);
+            rbtnUnidad.Location = new Point(85, 180);
             rbtnUnidad.Name = "rbtnUnidad";
             rbtnUnidad.Size = new Size(63, 19);
             rbtnUnidad.TabIndex = 4;
@@ -105,7 +108,7 @@
             gbOrdenamiento.BackColor = Color.Tan;
             gbOrdenamiento.Controls.Add(btnAscendente);
             gbOrdenamiento.Controls.Add(btnDescendente);
-            gbOrdenamiento.Location = new Point(164, 115);
+            gbOrdenamiento.Location = new Point(188, 117);
             gbOrdenamiento.Name = "gbOrdenamiento";
             gbOrdenamiento.Size = new Size(144, 100);
             gbOrdenamiento.TabIndex = 5;
@@ -114,12 +117,40 @@
             // panelNavbar
             // 
             panelNavbar.BackColor = Color.Black;
+            panelNavbar.Controls.Add(btnMax);
+            panelNavbar.Controls.Add(btnMin);
             panelNavbar.Controls.Add(label2);
             panelNavbar.Controls.Add(btnSalir);
             panelNavbar.Location = new Point(0, 0);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(354, 47);
+            panelNavbar.Size = new Size(393, 47);
             panelNavbar.TabIndex = 16;
+            // 
+            // btnMax
+            // 
+            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMax.BackColor = Color.Black;
+            btnMax.FlatStyle = FlatStyle.Flat;
+            btnMax.ForeColor = Color.Black;
+            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
+            btnMax.Location = new Point(283, 1);
+            btnMax.Name = "btnMax";
+            btnMax.Size = new Size(47, 46);
+            btnMax.TabIndex = 22;
+            btnMax.UseVisualStyleBackColor = false;
+            // 
+            // btnMin
+            // 
+            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMin.BackColor = Color.Black;
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
+            btnMin.Location = new Point(234, 3);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(46, 46);
+            btnMin.TabIndex = 21;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
             // 
             // label2
             // 
@@ -139,7 +170,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Impact", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.IndianRed;
-            btnSalir.Location = new Point(297, 3);
+            btnSalir.Location = new Point(336, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(57, 44);
             btnSalir.TabIndex = 0;
@@ -152,7 +183,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Peru;
-            ClientSize = new Size(352, 270);
+            ClientSize = new Size(393, 270);
             Controls.Add(panelNavbar);
             Controls.Add(rbtnUnidad);
             Controls.Add(rbtnNombre);
@@ -181,5 +212,7 @@
         private Panel panelNavbar;
         private Label label2;
         private Button btnSalir;
+        private Button btnMin;
+        private Button btnMax;
     }
 }
