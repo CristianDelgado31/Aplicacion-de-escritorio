@@ -14,7 +14,7 @@ using Usuarios;
 
 namespace WinFormLogin
 {
-    public partial class FormActividadUsuarios : Form, IPanelNavbar
+    public partial class FormRegistroActividadUsuarios : Form, IPanelNavbar
     {
         public List<USuarioLog> listaRegistroUsuarios;
         public List<USuarioLog> listaActualizada;
@@ -24,7 +24,7 @@ namespace WinFormLogin
         private bool accesoBtnGuardar;
         private bool dragging;
         private Point startPoint;
-        public FormActividadUsuarios()
+        public FormRegistroActividadUsuarios()
         {
             listaActualizada = new List<USuarioLog>();
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace WinFormLogin
             panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
             panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
         }
-        public FormActividadUsuarios(List<USuarioLog> ListaUsuariosLog, USuarioLog usuarioLog, FormMenuPrincipal formMenuPrincipal) : this()
+        public FormRegistroActividadUsuarios(List<USuarioLog> ListaUsuariosLog, USuarioLog usuarioLog, FormMenuPrincipal formMenuPrincipal) : this()
         {
             this.listaRegistroUsuarios = ListaUsuariosLog;
             this.usuarioLog = usuarioLog;
@@ -83,10 +83,8 @@ namespace WinFormLogin
         }
         private void GuardarListaEnJson(List<USuarioLog> lista, string rutaArchivo)
         {
-            // Convertir la lista a formato JSON
             string json = JsonConvert.SerializeObject(lista, Formatting.Indented);
 
-            // Escribir el JSON en el archivo
             File.WriteAllText(rutaArchivo, json);
         }
         private void btnAbrirArchivo_Click(object sender, EventArgs e)
@@ -103,16 +101,27 @@ namespace WinFormLogin
                 dynamic? obj = JsonConvert.DeserializeObject(textoJson);
                 listaActualizada = obj.ToObject(typeof(List<USuarioLog>));
 
+                //if(formMenuPrincipal.usuarioNoNuevo == false)
+                //{
+
+                //}
+                bool usuarioRepetido = false;
                 foreach (USuarioLog item in listaActualizada)
                 {
-                    if (item.Hora != usuarioLog.Hora && formMenuPrincipal.usuarioNoNuevo == false)
+                    if (item.Hora == usuarioLog.Hora && item.Fecha == usuarioLog.Fecha)
                     {
-                        listaActualizada.Add(usuarioLog);
-                        formMenuPrincipal.usuarioNoNuevo = true;
-                        break;
+                        usuarioRepetido = true;
+                    }
+                    else
+                    {
+                        usuarioRepetido = false;
                     }
 
                 }
+                if (usuarioRepetido == false)
+                    listaActualizada.Add(usuarioLog);
+
+
                 dataGridView1.DataSource = listaActualizada;
                 accesoBtnGuardar = true;
             }
@@ -122,5 +131,6 @@ namespace WinFormLogin
         {
             this.Close();
         }
+
     }
 }

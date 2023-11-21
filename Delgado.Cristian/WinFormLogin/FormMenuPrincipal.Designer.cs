@@ -83,10 +83,10 @@
             // lblSaludo
             // 
             lblSaludo.AutoSize = true;
-            lblSaludo.BackColor = Color.Chocolate;
+            lblSaludo.BackColor = Color.Peru;
             lblSaludo.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             lblSaludo.ForeColor = SystemColors.HighlightText;
-            lblSaludo.Location = new Point(338, 63);
+            lblSaludo.Location = new Point(340, 70);
             lblSaludo.Name = "lblSaludo";
             lblSaludo.Size = new Size(182, 30);
             lblSaludo.TabIndex = 4;
@@ -129,7 +129,7 @@
             panelNavbar.BackColor = Color.Black;
             panelNavbar.Controls.Add(label3);
             panelNavbar.Controls.Add(btnSalir);
-            panelNavbar.Location = new Point(-2, 1);
+            panelNavbar.Location = new Point(0, 0);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(868, 50);
             panelNavbar.TabIndex = 12;
@@ -164,7 +164,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(66, 66, 66);
+            BackColor = Color.Peru;
             ClientSize = new Size(866, 472);
             Controls.Add(lblSaludo);
             Controls.Add(pictureBox1);
@@ -173,6 +173,7 @@
             Controls.Add(btnMostrar);
             Controls.Add(btnAgregar);
             Controls.Add(btnCerrarSesion);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMenuPrincipal";
             StartPosition = FormStartPosition.CenterScreen;

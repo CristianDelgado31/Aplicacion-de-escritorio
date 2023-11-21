@@ -1,6 +1,6 @@
 ﻿namespace WinFormLogin
 {
-    partial class FormActividadUsuarios
+    partial class FormRegistroActividadUsuarios
     {
         /// <summary>
         /// Required designer variable.

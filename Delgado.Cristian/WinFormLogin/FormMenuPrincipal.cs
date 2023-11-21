@@ -21,7 +21,7 @@ namespace WinFormLogin
         private ColeccionGenerica<Alimento> coleccionGenerica;
         private List<USuarioLog>? listUsuariosLog;
         private USuarioLog usuarioLog;
-        private FormActividadUsuarios frmMostrarRegistroActividad;
+        private FormRegistroActividadUsuarios frmMostrarRegistroActividad;
         private string ubicacionArchivo;
         private bool serializarAutomatico;
         private BaseDeDatosAlimentos conexionBD;
@@ -37,7 +37,7 @@ namespace WinFormLogin
             ubicacionArchivo = Directory.GetCurrentDirectory();
             coleccionGenerica = new ColeccionGenerica<Alimento>();
             listUsuariosLog = new List<USuarioLog>();
-            frmMostrarRegistroActividad = new FormActividadUsuarios();
+            frmMostrarRegistroActividad = new FormRegistroActividadUsuarios();
             InitializeComponent();
             dragging = false;
             startPoint = new Point(0, 0);
@@ -113,7 +113,7 @@ namespace WinFormLogin
             var task = new Task<List<Alimento>>(() => conexionBD.CrearListaGenerica(coleccionGenerica.listaAlimentos));
             task.Start();
             List<Alimento> lista = await task;
-            
+
             return lista;
 
         }
@@ -136,8 +136,8 @@ namespace WinFormLogin
         }
         private void WinFormPrincipal_Load(object sender, EventArgs e)
         {
-            if(login.permisoConexionDB == false)
-            { 
+            if (login.permisoConexionDB == false)
+            {
                 Task hiloMensajeConexionBD = new Task(MetodoAsincronoMensajeConexionBD);
                 hiloMensajeConexionBD.Start();
                 login.permisoConexionDB = true;
@@ -145,21 +145,18 @@ namespace WinFormLogin
 
             string rutaRegistroUsuarios = ubicacionArchivo + @"\registroActividad.json";
 
-            if (File.Exists(rutaRegistroUsuarios))
-            {
-                listUsuariosLog = USuarioLog.DeserializarUsuariosLog();
-            }
-            else
+            if (!File.Exists(rutaRegistroUsuarios))
             {
                 listUsuariosLog.Add(usuarioLog);
                 USuarioLog.SerializarRegistroActividad(listUsuariosLog);
             }
+
         }
         private void WinFormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (serializarAutomatico == false)
             {
-                listUsuariosLog = listUsuariosLog = USuarioLog.DeserializarUsuariosLog();
+                listUsuariosLog = USuarioLog.DeserializarUsuariosLog();
                 listUsuariosLog.Add(usuarioLog);
             }
 
@@ -170,7 +167,7 @@ namespace WinFormLogin
         private void btnHistorialDeActividad_Click(object sender, EventArgs e)
         {
             serializarAutomatico = true;
-            frmMostrarRegistroActividad = new FormActividadUsuarios(listUsuariosLog, usuarioLog, this);
+            frmMostrarRegistroActividad = new FormRegistroActividadUsuarios(listUsuariosLog, usuarioLog, this);
             this.Hide();
             if (frmMostrarRegistroActividad.ShowDialog() == DialogResult.OK)
             {

@@ -19,7 +19,7 @@
     <Compile Update="FormMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormActividadUsuarios.cs">
+    <Compile Update="FormRegistroActividadUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
