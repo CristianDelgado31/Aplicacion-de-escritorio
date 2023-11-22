@@ -1,4 +1,4 @@
-# CRUD-Alimentos - Segundo parcial
+# Delgado.Cristian.SegundoParcial
 
 Sobre mi: Hola me llamo Cristian Delgado soy alumno de la UTN avellaneda estudiante de la tecnicatura en programación. 
 
