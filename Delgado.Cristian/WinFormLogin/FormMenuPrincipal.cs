@@ -148,7 +148,6 @@ namespace WinFormLogin
         }
         private async void WinFormPrincipal_Load(object sender, EventArgs e)
         {
-            await ActualizarHora();
             if (login.permisoConexionDB == false)
             {
                 Task hiloMensajeConexionBD = new Task(MetodoAsincronoMensajeConexionBD);
@@ -162,6 +161,7 @@ namespace WinFormLogin
                 listUsuariosLog.Add(usuarioLog);
                 USuarioLog.SerializarRegistroActividad(listUsuariosLog);
             }
+            await ActualizarHora();
 
         }
         private void WinFormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
