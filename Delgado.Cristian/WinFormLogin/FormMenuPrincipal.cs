@@ -44,6 +44,7 @@ namespace WinFormLogin
             panelNavbar.MouseDown += ((IPanelNavbar)this).PanelNavBar_MouseDown;
             panelNavbar.MouseUp += ((IPanelNavbar)this).PanelNavBar_MouseUp;
             panelNavbar.MouseMove += ((IPanelNavbar)this).PanelNavBar_MouseMove;
+
         }
         public FormMenuPrincipal(FormLogin login, Usuario usuario) : this()
         {
@@ -51,6 +52,17 @@ namespace WinFormLogin
             this.usuario = usuario;
             usuarioLog = new USuarioLog(this.usuario.nombre, this.usuario.apellido, Alimento.MostrarFechaHora(), Alimento.MostrarFechaHora("hora"));
             MostrarUsuario();
+        }
+
+        private async Task ActualizarHora()
+        {
+            while (true)
+            {
+                // Usa Task.Delay para esperar un segundo
+                await Task.Delay(1000);
+                // Actualiza el texto del Label con la hora actual
+                lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            }
         }
         void IPanelNavbar.PanelNavBar_MouseDown(object sender, MouseEventArgs e)
         {
@@ -134,15 +146,15 @@ namespace WinFormLogin
             else
                 MessageBox.Show(conexionBD.mensajeError.ToString());
         }
-        private void WinFormPrincipal_Load(object sender, EventArgs e)
+        private async void WinFormPrincipal_Load(object sender, EventArgs e)
         {
+            await ActualizarHora();
             if (login.permisoConexionDB == false)
             {
                 Task hiloMensajeConexionBD = new Task(MetodoAsincronoMensajeConexionBD);
                 hiloMensajeConexionBD.Start();
                 login.permisoConexionDB = true;
             }
-
             string rutaRegistroUsuarios = ubicacionArchivo + @"\registroActividad.json";
 
             if (!File.Exists(rutaRegistroUsuarios))

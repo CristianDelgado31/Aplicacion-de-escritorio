@@ -38,10 +38,12 @@
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
             panelNavbar = new Panel();
+            btnMax = new Button();
+            btnMin = new Button();
             label3 = new Label();
             btnSalir = new Button();
-            btnMin = new Button();
-            btnMax = new Button();
+            lblHora = new Label();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelNavbar.SuspendLayout();
             SuspendLayout();
@@ -88,7 +90,7 @@
             lblSaludo.BackColor = Color.Peru;
             lblSaludo.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             lblSaludo.ForeColor = SystemColors.HighlightText;
-            lblSaludo.Location = new Point(340, 70);
+            lblSaludo.Location = new Point(333, 70);
             lblSaludo.Name = "lblSaludo";
             lblSaludo.Size = new Size(182, 30);
             lblSaludo.TabIndex = 4;
@@ -138,6 +140,32 @@
             panelNavbar.Size = new Size(868, 50);
             panelNavbar.TabIndex = 12;
             // 
+            // btnMax
+            // 
+            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMax.BackColor = Color.Black;
+            btnMax.FlatStyle = FlatStyle.Flat;
+            btnMax.ForeColor = Color.Black;
+            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
+            btnMax.Location = new Point(758, 4);
+            btnMax.Name = "btnMax";
+            btnMax.Size = new Size(47, 46);
+            btnMax.TabIndex = 21;
+            btnMax.UseVisualStyleBackColor = false;
+            // 
+            // btnMin
+            // 
+            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMin.BackColor = Color.Black;
+            btnMin.FlatStyle = FlatStyle.Flat;
+            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
+            btnMin.Location = new Point(706, 4);
+            btnMin.Name = "btnMin";
+            btnMin.Size = new Size(46, 46);
+            btnMin.TabIndex = 20;
+            btnMin.UseVisualStyleBackColor = false;
+            btnMin.Click += btnMin_Click;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -164,31 +192,28 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // btnMin
+            // lblHora
             // 
-            btnMin.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMin.BackColor = Color.Black;
-            btnMin.FlatStyle = FlatStyle.Flat;
-            btnMin.Image = (Image)resources.GetObject("btnMin.Image");
-            btnMin.Location = new Point(706, 4);
-            btnMin.Name = "btnMin";
-            btnMin.Size = new Size(46, 46);
-            btnMin.TabIndex = 20;
-            btnMin.UseVisualStyleBackColor = false;
-            btnMin.Click += btnMin_Click;
+            lblHora.AutoSize = true;
+            lblHora.BackColor = Color.Black;
+            lblHora.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHora.ForeColor = Color.White;
+            lblHora.Location = new Point(70, 79);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(70, 21);
+            lblHora.TabIndex = 14;
+            lblHora.Text = "00:00:00";
             // 
-            // btnMax
+            // label1
             // 
-            btnMax.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMax.BackColor = Color.Black;
-            btnMax.FlatStyle = FlatStyle.Flat;
-            btnMax.ForeColor = Color.Black;
-            btnMax.Image = (Image)resources.GetObject("btnMax.Image");
-            btnMax.Location = new Point(758, 4);
-            btnMax.Name = "btnMax";
-            btnMax.Size = new Size(47, 46);
-            btnMax.TabIndex = 21;
-            btnMax.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(87, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(37, 17);
+            label1.TabIndex = 15;
+            label1.Text = "Hora";
             // 
             // FormMenuPrincipal
             // 
@@ -196,6 +221,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Peru;
             ClientSize = new Size(866, 472);
+            Controls.Add(label1);
+            Controls.Add(lblHora);
             Controls.Add(lblSaludo);
             Controls.Add(pictureBox1);
             Controls.Add(panelNavbar);
@@ -232,5 +259,7 @@
         private PictureBox pictureBox1;
         private Button btnMin;
         private Button btnMax;
+        private Label lblHora;
+        private Label label1;
     }
 }
